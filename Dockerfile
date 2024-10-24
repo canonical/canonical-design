@@ -4,7 +4,7 @@ FROM ubuntu:noble
 RUN apt update && apt install nginx -y
 
 # Create healthcheck endpoint
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./nginx.conf /etc/nginx/sites-available/default
 
 # Copy static files to the Nginx html directory
 COPY ./static /usr/share/nginx/html
