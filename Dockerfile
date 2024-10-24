@@ -1,7 +1,7 @@
 FROM ubuntu:noble
 
 # Install nginx
-RUN apt update && apt install nginx
+RUN apt update && apt install nginx -y
 
 # Create healthcheck endpoint
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
