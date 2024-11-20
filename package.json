@@ -1,0 +1,21 @@
+{
+  "name": "canonical-design",
+  "description": "marketing site for design team at Canonical",
+  "scripts": {
+    "build": "yarn run build-css",
+    "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:canonical/canonical-design.git"
+  },
+  "author": "canonical",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "1.70.0",
+    "postcss": "8.4.31",
+    "autoprefixer": "10.4.13",
+    "postcss-cli": "10.1.0",
+    "vanilla-framework": "4.16.0"
+  }
+}
