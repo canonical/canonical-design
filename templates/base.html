@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="index, follow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+
+      {% block title %}{% endblock %}
+      | Canonical design
+    </title>
+
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://assets.ubuntu.com/v1/f38b9c7e-COF%20apple-touch-icon.png" />
+    <link rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="https://assets.ubuntu.com/v1/be7e4cc6-COF-favicon-32x32.png" />
+    <link rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="https://assets.ubuntu.com/v1/16c27f81-COF%20favicon-16x16.png" />
+
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/f1ea362b-Ubuntu%5Bwdth,wght%5D-latin-v0.896a.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/90b59210-Ubuntu-Italic%5Bwdth,wght%5D-latin-v0.896a.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/d5fc1819-UbuntuMono%5Bwght%5D-latin-v0.869.woff2"
+          crossorigin />
+    <link rel="preconnect"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/77cd6650-Ubuntu%5Bwdth,wght%5D-cyrillic-extended-v0.896a.woff2"
+          crossorigin />
+    <link rel="preconnect"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/2702fce5-Ubuntu%5Bwdth,wght%5D-cyrillic-v0.896a.woff2"
+          crossorigin />
+    <link rel="preconnect"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/5c108b7d-Ubuntu%5Bwdth,wght%5D-greek-extended-v0.896a.woff2"
+          crossorigin />
+    <link rel="preconnect"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/0a14c405-Ubuntu%5Bwdth,wght%5D-greek-v0.896a.woff2"
+          crossorigin />
+    <link rel="preconnect"
+          as="font"
+          type="font/woff2"
+          href="https://assets.ubuntu.com/v1/19f68eeb-Ubuntu%5Bwdth,wght%5D-latin-extended-v0.896a.woff2"
+          crossorigin />
+
+    <meta name="copydoc" content=" 
+      {% block meta_copydoc %}https://drive.google.com/drive/folders/1WJxVFy-UHHUi60OByNqYpG2rsrqBvNYx{% endblock %}" />
+
+      <meta name="description" content=" 
+        {% block description %}{{ description }}{% endblock description %}" />
+        <meta name="author" content="Canonical" />
+
+        <link rel="stylesheet"
+              type="text/css"
+              media="screen"
+              href="/static/css/styles.css" />
+        <script src="static/js/hack.js" type="text/javascript" async=""></script>
+      </head>
+      <body>
+
+        <a href="#main-content" class="p-link--skip">Jump to main content</a>
+
+        <!-- Header -->
+        <div id="secondary-navigation" class="p-navigation is-secondary is-dark">
+          <div class="p-navigation__row--25-75">
+            <div class="p-navigation__banner">
+              <div class="p-navigation__tagged-logo">
+                <a class="p-navigation__link" href="./">
+                  <div class="p-navigation__logo-tag">
+                    <img class="p-navigation__logo-icon"
+                         src="https://assets.ubuntu.com/v1/82818827-CoF_white.svg"
+                         alt="" />
+                  </div>
+                  <span class="p-navigation__logo-title">Canonical&nbsp;Design</span>
+                </a>
+              </div>
+
+              <a href="#navigation"
+                 class="p-navigation__toggle--open"
+                 title="Toggle navigation">Menu</a>
+              <a href="#"
+                 class="p-navigation__toggle--close"
+                 title="Toggle navigation">Close</i></a>
+
+            </div>
+
+            <nav id="navigation"
+                 class="p-navigation__nav"
+                 aria-label="Canonical&nbsp;Design navigation">
+              <ul class="p-navigation__items">
+
+                <li class="p-navigation__item--dropdown-toggle">
+                  <a class="p-navigation__link"
+                     href="#"
+                     onclick="toggleDropdown(this);return false;">Design practice</a>
+                  <ul class="p-navigation__dropdown" aria-hidden="true">
+                    <li>
+                      <a href="./design-practice.html" class="p-navigation__dropdown-item">Design practice</a>
+                    </li>
+                    <li>
+                      <a href="./design-practice_user-research.html"
+                         class="p-navigation__dropdown-item">User research</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="p-navigation__item--dropdown-toggle">
+                  <a class="p-navigation__link"
+                     href="#"
+                     onclick="toggleDropdown(this);return false;">Brand</a>
+                  <ul class="p-navigation__dropdown" aria-hidden="true">
+                    <li>
+                      <a href="./brand.html" class="p-navigation__dropdown-item">Brand</a>
+                    </li>
+                    <li>
+                      <a href="./brand_font.html" class="p-navigation__dropdown-item">Font</a>
+                    </li>
+                    <li>
+                      <a href="./brand_accessibility.html" class="p-navigation__dropdown-item">Accessibility</a>
+                    </li>
+                    <li>
+                      <a href="./brand_resources.html" class="p-navigation__dropdown-item">Resources</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="p-navigation__item">
+                  <a class="p-navigation__link" href="./design-systems.html">Design systems</a>
+                </li>
+
+                <li class="p-navigation__item">
+                  <a class="p-navigation__link" href="./blog.html">Blog</a>
+                </li>
+
+                <li class="p-navigation__item--dropdown-toggle">
+                  <a class="p-navigation__link"
+                     href="#"
+                     onclick="toggleDropdown(this);return false;">Open design</a>
+                  <ul class="p-navigation__dropdown" aria-hidden="true">
+                    <li>
+                      <a href="./open-design.html" class="p-navigation__dropdown-item">Open design</a>
+                    </li>
+                    <li>
+                      <a href="./open-design_get-started-designers.html"
+                         class="p-navigation__dropdown-item">Get started for designers</a>
+                    </li>
+                    <li>
+                      <a href="./open-design_get-started-maintainers.html"
+                         class="p-navigation__dropdown-item">Get started for maintainers</a>
+                    </li>
+                    <li>
+                      <a href="./open-design_canonical-projects.html"
+                         class="p-navigation__dropdown-item">Canonical projects</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="p-navigation__item--external-link">
+                  <a class="p-navigation__link"
+                     href="https://canonical.com/careers/web-and-design"
+                     target="_blank">Careers</a>
+                </li>
+
+              </ul>
+
+              <ul class="p-navigation__items global-nav">
+                <li class="p-navigation__item global-nav__dropdown-toggle">
+                  <button href="#canonical-products"
+                          aria-controls="canonical-products"
+                          class="p-navigation__link global-nav__header-link-anchor"
+                          id="all-canonical-link"
+                          aria-expanded="false">All Canonical</button>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+        <!-- replace with the navigation template -->
+        <div class="wrapper">
+          <div id="main-content" class="inner-wrapper">
+
+            {% block content %}{% endblock %}
+
+          </div>
+        </div>
+        <!-- Footer -->
+        <footer class="is-dark p-strip u-clearfix" style="background-color: #2d2d2d;">
+          <div class="row">
+            <div class="col-3 col-medium-2">
+              <p class="p-footer--secondary__content">&copy; 2024 Canonical Ltd.</p>
+            </div>
+            <div class="col-9 col-medium-4">
+              <p>Ubuntu and Canonical are registered trademarks of Canonical Ltd.</p>
+              <hr class="is-muted" />
+              <nav class="p-footer--secondary__nav">
+                <ul class="p-inline-list--inline u-responsive-realign u-no-margin--left u-no-padding--left">
+                  <li class="p-inline-list__item">
+                    <a accesskey="8" href="https://ubuntu.com/legal">Legal information</a>
+                  </li>
+                  <li class="p-inline-list__item">
+                    <a accesskey="9" href="https://ubuntu.com/legal/data-privacy">Data privacy</a>
+                  </li>
+                  <li class="p-inline-list__item">
+                    <a href="https://github.com/canonical/ubuntu.com/issues/new?template=ISSUE_TEMPLATE.yaml"
+                       id="report-a-bug">Report a bug on this site</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <script>
+            /* Add the page to the report a bug link */
+            document.querySelector('#report-a-bug').href += '&reported_from=' + location.href;
+          </script>
+
+          <div class="u-fixed-width">
+            <p class="u-hide--large link-to-top">
+              <a href="#">Back to top</a>
+            </p>
+          </div>
+        </footer>
+        <!-- replace with footer template -->
+      </body>
+    </html>
