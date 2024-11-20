@@ -1,0 +1,136 @@
+// Import the framework
+@import '../../node_modules/vanilla-framework/';
+
+// Include all of Vanilla Framework
+@include vanilla;
+
+// Force the option to select a dropdown item in the nav
+.p-navigation__item--dropdown-toggle {
+    &.is-selected {
+      li.is-selected {
+        background-color: var(--vf-color-background-hover);
+      }
+    }
+  }
+  
+  // External link instead of dropdown chevron
+  .p-navigation__item--external-link {
+    position: relative;
+  
+    .p-navigation__link {
+      padding-right: 2rem;
+    }
+  
+    &::after {
+      background-image: var(
+        --vf-theme-light,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%23000' d='M8.9999 2.5V1H14.7499V6.75H13.2499V3.561L7.4999 9.311L6.4389 8.25L12.1899 2.5H8.9999ZM10.5 11.7503V8.2803L12 6.7803V11.7503C12 12.8543 11.104 13.7503 10 13.7503H4C2.896 13.7503 2 12.8543 2 11.7503V5.7503C2 4.6453 2.896 3.7503 4 3.7503H8.667L7.166 5.2503H4C3.725 5.2503 3.5 5.4743 3.5 5.7503V11.7503C3.5 12.0253 3.725 12.2503 4 12.2503H10C10.275 12.2503 10.5 12.0253 10.5 11.7503Z'/%3E%3C/svg%3E")
+      ) var(
+        --vf-theme-dark,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cpath fill='%23fff' d='M8.9999 2.5V1H14.7499V6.75H13.2499V3.561L7.4999 9.311L6.4389 8.25L12.1899 2.5H8.9999ZM10.5 11.7503V8.2803L12 6.7803V11.7503C12 12.8543 11.104 13.7503 10 13.7503H4C2.896 13.7503 2 12.8543 2 11.7503V5.7503C2 4.6453 2.896 3.7503 4 3.7503H8.667L7.166 5.2503H4C3.725 5.2503 3.5 5.4743 3.5 5.7503V11.7503C3.5 12.0253 3.725 12.2503 4 12.2503H10C10.275 12.2503 10.5 12.0253 10.5 11.7503Z'/%3E%3C/svg%3E")
+      );
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      display: block;
+      height: 1rem;
+      pointer-events: none;
+      position: absolute;
+      right: 0.5rem;
+      top: 1.25rem;
+      width: 1rem;
+    }
+  }
+  
+  // Blockquote style override until officially in vanilla
+  .p-pull-quote {
+    border-left: 3px solid #e95420;
+    padding-bottom: 0.75rem;
+  
+    .p-pull-quote__quote {
+      font-style: italic;
+  
+      &:first-of-type::before,
+      &:last-of-type::after {
+        content: '';
+      }
+    }
+  
+    .p-pull-quote__citation {
+      font-style: normal;
+      margin-bottom: 0;
+    }
+  }
+  
+  // Border for 2/3 images as per design
+  .p-image-container--2-3,
+  .is-underlined {
+    border-bottom: 3px solid #000;
+  }
+  
+  // Brand font styling
+  .font-tester__demo {
+    &[data-family='monospace'] {
+      font-family: "Ubuntu Mono variable";
+    }
+  
+    &[data-style='italic'] {
+      font-style: italic;
+    }
+  }
+  
+  // Blog post needs to be cover, not contain
+  .blog-p-card--post .p-image-container__image {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  // Hero section styling
+  #ds_hero1 {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+  }
+  
+  // Mobile hacks
+  @media (max-width: 1210px) {
+    body:target {
+      .p-navigation__nav {
+        display: flex;
+      }
+  
+      .p-navigation__items {
+        display: block;
+      }
+  
+      .p-navigation__toggle--open {
+        display: none;
+      }
+  
+      .p-navigation__toggle--close {
+        display: block;
+      }
+    }
+  
+    .p-navigation.is-secondary .p-navigation__item > .p-navigation__link {
+      padding-left: 3.1rem;
+    }
+  
+    .p-navigation__item--external-link::after {
+      right: 1.5rem;
+    }
+  
+    .p-navigation__item--dropdown-toggle .p-navigation__dropdown {
+      padding-left: 3.1rem;
+    }
+  }
+  
+  @media (max-width: 619px) {
+    #ds_hero1 {
+      display: none;
+    }
+  }
+  
