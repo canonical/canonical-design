@@ -1,9 +1,9 @@
 // Import the framework
-@import 'vanilla-framework';
+@import "vanilla-framework";
 
 // Include all of Vanilla Framework
 @include vanilla;
-  
+
 // Blockquote style override until officially in vanilla
 .p-pull-quote {
   border-left: 3px solid #e95420;
@@ -14,7 +14,7 @@
 
     &:first-of-type::before,
     &:last-of-type::after {
-      content: '';
+      content: "";
     }
   }
 
@@ -23,42 +23,3 @@
     margin-bottom: 0;
   }
 }
-
-// Border for 2/3 images as per design
-.p-image-container--2-3,
-.is-underlined {
-  border-bottom: 3px solid #000;
-}
-
-// Brand font styling
-.font-tester__demo {
-  &[data-family='monospace'] {
-    font-family: "Ubuntu Mono variable";
-  }
-
-  &[data-style='italic'] {
-    font-style: italic;
-  }
-}
-
-// Blog post needs to be cover, not contain
-.blog-p-card--post .p-image-container__image {
-  -o-object-fit: cover;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-// Hero section styling
-#ds_hero1 {
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-}
-
-@media (max-width: 619px) {
-  #ds_hero1 {
-    display: none;
-  }
-}
-  
