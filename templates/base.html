@@ -77,11 +77,13 @@
         <meta name="author" content="Canonical" />
 
         <link rel="stylesheet"
-              type="text/css"
-              media="screen"
-              href="/static/css/styles.css" />
+        type="text/css"
+        media="screen"
+        href="{{ url_for('static', filename='css/styles.css') }}" />
+  
       </head>
-      <body class="{% block body_class %}{% endblock %} l-site">
+      <body class=" 
+        {% block body_class %}{% endblock %} l-site">
 
         <a href="#main-content" class="p-link--skip">Jump to main content</a>
 

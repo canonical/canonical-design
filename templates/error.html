@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 
-{% block meta_title %}
-  {% if error_code== 400 %}
-    400: Bad Request
-  {% elif error_code== 403 %}
-    403: Forbidden
-  {% elif error_code== 404 %}
-    404: Page not found
-  {% elif error_code== 410 %}
-    410: Page deleted
-  {% elif error_code== 429 %}
-    429: Too many requests
-  {% elif error_code== 500 %}
-    500: Server error
-  {% else %}
-    Error
-  {% endif %}
+{% if error_code == 400 %}
+  {% set error_heading = "400: Bad Request" %}
+  {% set error_description = "The server didn't understand the request." %}
+{% elif error_code == 403 %}
+  {% set error_heading = "403: Forbidden" %}
+  {% set error_description = "You're not allowed to access this page." %}
+{% elif error_code == 404 %}
+  {% set error_heading = "404: Page not found" %}
+  {% set error_description = "Sorry, we couldn't find that page." %}
+{% elif error_code == 410 %}
+  {% set error_heading = "410: Page deleted" %}
+  {% set error_description = "This page has been removed." %}
+{% elif error_code == 429 %}
+  {% set error_heading = "429: Too many requests" %}
+  {% set error_description = "Too many requests have been made to this page." %}
+{% elif error_code == 500 %}
+  {% set error_heading = "500: Server error" %}
+  {% set error_description = "Try reloading the page. If the error persists, please note that it may be a <a href='https://github.com/canonical/canonical-design/issues'>known issue</a>. If not, please <a href='https://github.com/canonical/canonical-design/issues/new'>file a new issue</a>." %}
+{% else %}
+  {% set error_heading = "Error" %}
+  {% set error_description = "An error occurred while loading the page." %}
+{% endif %}
 
+{% block meta_title %}
+  {{ error_heading }}
 {% endblock meta_title %}
 
 {% block meta_description %}
@@ -33,48 +41,20 @@
     <div class="row u-equal-height">
       <div class="col-6 u-vertically-center u-align--center">
         {{ image(url="https://assets.ubuntu.com/v1/bcdcf2c8-image-404.svg",
-                alt="Error Mascot", height="365", width="360", hi_def=True, loading="auto") | safe }}
+                alt="Error Mascot",
+                height="365",
+                width="360",
+                hi_def=True,
+                loading="auto") | safe }}
       </div>
       <div class="col-6 u-vertically-center">
         <div>
-          <h1>
-            {% if error_code== 400 %}
-              400: Bad Request
-            {% elif error_code== 403 %}
-              403: Forbidden
-            {% elif error_code== 404 %}
-              404: Page not found
-            {% elif error_code== 410 %}
-              410: Page deleted
-            {% elif error_code== 429 %}
-              429: Too many requests
-            {% elif error_code== 500 %}
-              500: Server error
-            {% else %}
-              Error
-            {% endif %}
-          </h1>
+          <h1>{{ error_heading }}</h1>
           <p class="p-heading--4">
             {% if error_message %}
               {{ error_message }}
             {% else %}
-              {% if error_code == 400 %}
-                The server didn't understand the request.
-              {% elif error_code== 403 %}
-                You're not allowed to access this page
-              {% elif error_code== 404 %}
-                Sorry, we couldn't find that page.
-              {% elif error_code== 410 %}
-                This page has been removed
-              {% elif error_code== 429 %}
-                Too many requests have been made to this page
-              {% elif error_code== 500 %}
-                Try reloading the page.
-                If the error persists, please note that it may be a <a href="https://github.com/canonical/canonical-design/issues">known issue</a>.
-                If not, please <a href="https://github.com/canonical/canonical-design/issues/new">file a new issue</a>.
-              {% else %}
-                An error occurred while loading the page.
-              {% endif %}
+              {{ error_description | safe }}
             {% endif %}
           </p>
         </div>

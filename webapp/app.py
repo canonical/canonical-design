@@ -17,6 +17,7 @@ app = FlaskBase(
 def utility_processor():
     return {"image": image_template}
 
+
 @app.errorhandler(Exception)
 def render_error_page(error):
     error_code = getattr(error, "code", 500)
@@ -24,6 +25,7 @@ def render_error_page(error):
     return render_template(
         "error.html", error_code=int(error_code), error_message=error_message
     )
+
 
 template_finder_view = TemplateFinder.as_view("template_finder")
 app.add_url_rule("/", view_func=template_finder_view)
