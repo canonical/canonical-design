@@ -4,6 +4,9 @@
 // Include all of Vanilla Framework
 @include vanilla;
 
+// import cookie policy
+@import "@canonical/cookie-policy/build/css/cookie-policy";
+
 // Blockquote style override until officially in vanilla
 .p-pull-quote {
   border-left: 3px solid #e95420;

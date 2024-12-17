@@ -13,6 +13,27 @@
     </title>
 
     <link rel="preconnect" href="https://res.cloudinary.com" />
+    <!-- Cookie policy -->
+    <script src="{{ url_for('static', filename='js/dist/cookie-policy.js') }}"></script>
+
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-NV2KV6F');
+    </script>
+    <!-- End Google Tag Manager -->
 
     <!-- Load icons-->
     <link rel="apple-touch-icon"
@@ -77,10 +98,10 @@
         <meta name="author" content="Canonical" />
 
         <link rel="stylesheet"
-        type="text/css"
-        media="screen"
-        href="{{ url_for('static', filename='css/styles.css') }}" />
-  
+              type="text/css"
+              media="screen"
+              href="{{ url_for('static', filename='css/styles.css') }}" />
+
       </head>
       <body class=" 
         {% block body_class %}{% endblock %} l-site">
