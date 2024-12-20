@@ -42,9 +42,14 @@
             </p>
             <div class="u-fixed-width">
               <div class="p-image-container--16-9 is-highlighted">
-                <img class="p-image-container__image"
-                     src="./img/od_inclusive.png"
-                     alt="The sum of many" />
+                {{ image(url="https://assets.ubuntu.com/v1/91a46784-transparent-inclusive-collab.png",
+                                alt="",
+                                width="1800",
+                                height="1013",
+                                hi_def=True,
+                                loading="auto",
+                                attrs={"class": "p-image-container__image"},) | safe
+                }}
               </div>
             </div>
 
@@ -112,30 +117,42 @@
             <div class="row">
               <div class="col-3">
                 <div class="p-image-container--2-3 is-highlighted">
-                  <img class="p-image-container__image"
-                       src="./img/od_sharing-knowledge.png"
-                       alt=""
-                       width="800" />
+                  {{ image(url="https://assets.ubuntu.com/v1/f2d6b250-od_sharing-knowledge.png",
+                                    alt="",
+                                    width="1200",
+                                    height="1800",
+                                    hi_def=True,
+                                    loading="lazy",
+                                    attrs={"class": "p-image-container__image"},) | safe
+                  }}
                 </div>
                 <h5>Sharing knowledge lifts everyone up</h5>
                 <p>Working in the open allows more people to get access to good quality resources and learn from diverse sources.</p>
               </div>
               <div class="col-3">
                 <div class="p-image-container--2-3 is-highlighted">
-                  <img class="p-image-container__image"
-                       src="./img/od_diverse-pov.png"
-                       alt=""
-                       width="800" />
+                  {{ image(url="https://assets.ubuntu.com/v1/6d5e59f1-od_diverse-pov.png",
+                                    alt="",
+                                    width="1201",
+                                    height="1800",
+                                    hi_def=True,
+                                    loading="lazy",
+                                    attrs={"class": "p-image-container__image"},) | safe
+                  }}
                 </div>
                 <h5>Diverse point-of-views make for better experiences</h5>
                 <p>Working in the open allows more people to get access to good quality resources and learn from diverse sources.</p>
               </div>
               <div class="col-3">
                 <div class="p-image-container--2-3 is-highlighted">
-                  <img class="p-image-container__image"
-                       src="./img/od_real-life-projects.png"
-                       alt=""
-                       width="800" />
+                  {{ image(url="https://assets.ubuntu.com/v1/c509341e-od_real-life-projects.png",
+                                    alt="",
+                                    width="1200",
+                                    height="1800",
+                                    hi_def=True,
+                                    loading="lazy",
+                                    attrs={"class": "p-image-container__image"},) | safe
+                  }}
                 </div>
                 <h5>Real life projects are important to build skills</h5>
                 <p>Working in the open allows more people to get access to good quality resources and learn from diverse sources.</p>
