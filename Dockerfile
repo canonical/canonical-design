@@ -48,7 +48,7 @@ COPY --from=build-js /srv/static/js/dist static/js/dist
 
 # Set build ID
 ARG BUILD_ID
-ENV TALISKER_REVISION_ID "${BUILD_ID}"
+ENV INSTANCE_REVISION_ID "${BUILD_ID}"
 
 # Setup commands to run server
 ENTRYPOINT ["./entrypoint"]
