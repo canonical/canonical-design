@@ -14,177 +14,82 @@
 
 {% block content %}
 
+  <style>
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(10);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+
+    .progress-bar-inner {
+      width: 50%;
+      height: 100%;
+      background-color: #4caf50;
+      animation: progress 3s infinite;
+    }
+
+    @keyframes progress {
+      0% {
+        width: 0;
+      }
+
+      50% {
+        width: 75%;
+      }
+
+      100% {
+        width: 0;
+      }
+    }
+  </style>
   <div class="wrapper u-no-margin-top">
     <main id="main-content" class="inner-wrapper">
-      <div class="p-suru--25-75">
-        <section class="p-section--hero">
-          <div class="row">
-            <div class="col">
-              <h1>Thoughts that shape Canonical Design</h1>
-            </div>
+      <div class="row--50-50 p-strip is-deep">
+        <div class="col">
+          <h1>Oops! We're Working on It</h1>
+          <p>
+            Things are under construction right now.
+            <br />
+            Kevin the Builder is working overtime to fix it for you!
+            <br />
+            Get him some bananas!!!
+          </p>
+        </div>
+        <div class="col">
+          <div class="p-image_container">
+
+            {{ image (
+            url="https://assets.ubuntu.com/v1/75c73729-HD-wallpaper-minions-kevin-bob-construction-workers.jpg",
+            alt="",
+            width="800",
+            height="500",
+            hi_def=True,
+            loading="auto|lazy"
+            ) | safe
+            }}
           </div>
-        </section>
+        </div>
+        <br />
+        <div class="progress-bar">
+          <div class="progress-bar-inner"></div>
+        </div>
       </div>
-
-      <div class="row u-equal-height u-clearfix">
-
-        <!-- repeat this card for n posts -->
-
-        <div class="col-4 col-medium-2 blog-p-card--post">
-          <header class="blog-p-card__header">
-            <h5 class="p-muted-heading u-no-margin--bottom">
-              <!-- TOPIC -->
-              Design context
-            </h5>
-          </header>
-          <div class="blog-p-card__content">
-            <div class="p-image-container--16-9 u-crop--16-9 is-highlighted">
-              <a href="./posts/an-introduction-to-open-source.html"
-                 aria-hidden="true"
-                 tabindex="-1">
-                <img class="p-image-container__image"
-                     src="./img/post_open-source1.png"
-                     alt="An introduction to Open Source"
-                     width="1000" />
-              </a>
-            </div>
-            <h3 class="p-heading--4">
-              <!-- TITLE -->
-              <a href="./posts/an-introduction-to-open-source.html">An Introduction to Open Source</a>
-            </h3>
-            <p>
-              <!-- AUTHOR AND DATE -->
-              <em>by Piper Deck on 6 September 2024</em>
-            </p>
-            <p class="u-hide--small">
-              <!-- SNIPPET -->
-              Open Source is one of the most exciting phenomena of our modern world. For many of us, it inspires us to dream of a utopia where software is free, secure, and well made...
-            </p>
-          </div>
-
-          <p class="blog-p-card__footer">
-            <button class="p-chip">
-              <!-- POST TYPE -->
-              <span class="p-chip__value">Article</span>
-            </button>
-          </p>
-        </div>
-
-        <div class="col-4 col-medium-2 blog-p-card--post">
-          <header class="blog-p-card__header">
-            <h5 class="p-muted-heading u-no-margin--bottom">
-              <!-- TOPIC -->
-              Open design
-            </h5>
-          </header>
-          <div class="blog-p-card__content">
-            <div class="p-image-container--16-9 u-crop--16-9 is-highlighted">
-              <a href="./posts/talking-to-christoph-ono.html"
-                 aria-hidden="true"
-                 tabindex="-1">
-                <img class="p-image-container__image"
-                     src="./img/post_bitcoin-design1.png"
-                     alt="Interview Christoph Ono"
-                     width="800" />
-              </a>
-            </div>
-            <h3 class="p-heading--4">
-              <!-- TITLE -->
-              <a href="./posts/talking-to-christoph-ono.html">Talking to Christoph Ono</a>
-            </h3>
-            <p>
-              <!-- AUTHOR AND DATE -->
-              <em>by Hayden Chambers on 31 August 2024</em>
-            </p>
-            <p class="u-hide--small">
-              <!-- SNIPPET -->
-              The Canonical Open Design Working Group sat down to talk to Christoph Ono, founder of bitcoin.design to discuss some of the challenges of the open design landscape...
-            </p>
-          </div>
-
-          <p class="blog-p-card__footer">
-            <button class="p-chip">
-              <!-- POST TYPE -->
-              <span class="p-chip__value">Interview</span>
-            </button>
-          </p>
-        </div>
-
-        <div class="col-4 col-medium-2 blog-p-card--post">
-          <header class="blog-p-card__header">
-            <h5 class="p-muted-heading u-no-margin--bottom">
-              <!-- TOPIC -->
-              Engineering Design
-            </h5>
-          </header>
-          <div class="blog-p-card__content">
-            <div class="p-image-container--16-9 u-crop--16-9 is-highlighted">
-              <a href="./posts/visual-testing-github-actions-migration.html"
-                 aria-hidden="true"
-                 tabindex="-1">
-                <img class="p-image-container__image"
-                     src="./img/post_visual-testing1.png"
-                     alt="Visual Testing: GitHub Actions Migration & Test Optimisation"
-                     width="800" />
-              </a>
-            </div>
-            <h3 class="p-heading--4">
-              <!-- TITLE -->
-              <a href="./posts/visual-testing-github-actions-migration.html">Visual Testing: GitHub Actions Migration & Test Optimisation</a>
-            </h3>
-            <p>
-              <!-- AUTHOR AND DATE -->
-              <em>by Julie Muzina on 13 August 2024</em>
-            </p>
-            <p class="u-hide--small">
-              <!-- SNIPPET -->
-              Visual testing analyses the visual appearance of a user interface. Snapshots of pages are taken to create a “baseline”, or the current expectation of how each page should appear. Proposed changes are then compared against the baseline...
-            </p>
-          </div>
-
-          <p class="blog-p-card__footer">
-            <button class="p-chip">
-              <!-- POST TYPE -->
-              <span class="p-chip__value">Article</span>
-            </button>
-          </p>
-        </div>
-
-      </div>
-
-      <section class="p-strip is-shallow">
-        <div class="u-fixed-width">
-          <ol class="p-pagination u-align--center">
-            <li class="p-pagination__item">
-              <span class="p-pagination__link--previous is-disabled">
-                <i class="p-icon--chevron-down">Previous page</i>
-              </span>
-            </li>
-            <li class="p-pagination__item">
-              <a href="?page=1" class="p-pagination__link is-active">1</a>
-            </li>
-            <li class="p-pagination__item">
-              <a href="?page=2" class="p-pagination__link">2</a>
-            </li>
-            <li class="p-pagination__item">
-              <a href="?page=3" class="p-pagination__link">3</a>
-            </li>
-            <li class="p-pagination__item">
-              <a href="?page=4" class="p-pagination__link">4</a>
-            </li>
-            <li class="p-pagination__item">
-              <a href="?page=5" class="p-pagination__link">5</a>
-            </li>
-            <li class="p-pagination__item">
-              <a href="?page=2" class="p-pagination__link--next">
-                <i class="p-icon--chevron-down">Next page</i>
-              </a>
-            </li>
-          </ol>
-        </div>
-      </section>
-
     </main>
-    <!-- /.inner-wrapper -->
   </div>
+
 {% endblock content %}
