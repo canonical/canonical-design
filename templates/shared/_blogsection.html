@@ -1,0 +1,32 @@
+<section class="p-section">
+  {% set articles = get_blogs() %}
+  <div class="row">
+    <hr class="p-rule" />
+    <div class="col-3 col-medium-6">
+      <div class="p-section--shallow">
+        <h2>Explore what we're up to</h2>
+      </div>
+    </div>
+    <div class="col-9 col-medium-6">
+      <div class="row">
+        {% for article in articles %}
+          <div class="col-3 col-medium-2 u-equal-height-items">
+            <div class="p-section--shallow">
+              <div class="u-crop--16-9">
+                <div class="p-image-wrapper">
+                  <a href="/blog/{{ article.slug }}" aria-hidden="true" tabindex="-1">
+                    <div class="p-image-wrapper">{{ article.image.rendered|safe }}</div>
+                  </a>
+                </div>
+              </div>
+              <h3 class="p-heading--5">
+                <a href="/blog/{{ article.slug }}">{{ article.title.rendered | safe }}</a>
+              </h3>
+              <p>{{ article.excerpt.raw.replace('[…]', '') |truncate(1000) }}...</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
