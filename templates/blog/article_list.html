@@ -1,0 +1,9 @@
+{% block article_list %}
+
+<div class="p-section" id="articles-list">
+  {% for article in articles %}
+    {% include 'blog/blog-card.html' %}
+  {% endfor %}
+</div>
+
+{% endblock %}
