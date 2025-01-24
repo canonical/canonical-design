@@ -8,7 +8,8 @@
     "watch-js": "webpack --watch",
     "watch-css": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
     "build": "yarn run build-css && yarn run build-js",
-    "build-js": "yarn run webpack",
+    "build-js": "yarn run webpack && yarn run build-latest-news",
+    "build-latest-news": "cp node_modules/@canonical/latest-news/dist/latest-news.js static/js/dist",
     "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
     "lint-python": "flake8 --extend-ignore=E203 webapp && black --check --line-length 79 webapp",
     "lint-scss": "stylelint static/**/*.scss",
@@ -26,6 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "@canonical/cookie-policy": "3.6.5",
+    "@canonical/latest-news": "1.5.0",
     "autoprefixer": "10.4.13",
     "global": "^4.4.0",
     "postcss": "8.4.49",

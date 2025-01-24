@@ -310,7 +310,9 @@
         </div>
       </section>
 
-      {% include '/shared/_blogsection.html' %}
+      {% with section_classes='p-section--deep', tag_id='1239', limit='3', hide_date=True, link_image=True, show_image=True, show_excerpt=True, excerptLength=200 %}
+        {% include "/shared/_blogsection.html" %}
+      {% endwith %}
 
     </main>
     <!-- /.inner-wrapper -->

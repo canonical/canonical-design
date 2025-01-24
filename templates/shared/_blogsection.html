@@ -1,32 +1,69 @@
-<section class="p-section">
-  {% set articles = get_blogs() %}
-  <div class="row">
-    <hr class="p-rule" />
-    <div class="col-3 col-medium-6">
-      <div class="p-section--shallow">
-        <h2>Explore what we're up to</h2>
-      </div>
+{# djlint: off #}
+<noscript>
+  <section class="{% if section_classes %}{{ section_classes }}{% else %}p-strip{% endif %}">
+    <div class="row">
+      <h3><a href="/blog{% if tag_name %}/tag/{{ tag_name }}{% endif %}">Read the latest news on our blog&nbsp;&rsaquo;</a></h3>
     </div>
-    <div class="col-9 col-medium-6">
-      <div class="row">
-        {% for article in articles %}
-          <div class="col-3 col-medium-2 u-equal-height-items">
-            <div class="p-section--shallow">
-              <div class="u-crop--16-9">
-                <div class="p-image-wrapper">
-                  <a href="/blog/{{ article.slug }}" aria-hidden="true" tabindex="-1">
-                    <div class="p-image-wrapper">{{ article.image.rendered|safe }}</div>
-                  </a>
-                </div>
-              </div>
-              <h3 class="p-heading--5">
-                <a href="/blog/{{ article.slug }}">{{ article.title.rendered | safe }}</a>
-              </h3>
-              <p>{{ article.excerpt.raw.replace('[…]', '') |truncate(1000) }}...</p>
-            </div>
+  </section>
+</noscript>
+
+<section class="u-hide {% if section_classes %}{{ section_classes }}{% else %}p-strip{% endif %}" data-js="latest-news">
+  <div class="row">
+        <hr class="p-rule" />
+        <div class="col-3">
+          <div class="p-section--shallow">
+            <h2>Explore what we're up to</h2>
           </div>
-        {% endfor %}
+    </div>
+    <div class="col-9">
+      <div id="horizontal-latest-articles" class="p-equal-height-row--wrap">
+        <div style="min-height: 9.1rem"><i class="p-icon--spinner u-animation--spin">Loading...</i></div>
       </div>
     </div>
   </div>
+
+  <template style="display:none" id="horizontal-articles-template">
+    <div class="p-equal-height-row__col">
+      {% if not hide_date %}
+        <div class="p-equal-height-row__item">
+          <p class="u-no-margin--bottom p-muted-heading">
+            <time datetime="" class="article-time"></time>
+          </p>
+        </div>
+      {% endif %}
+      {% if show_image %}
+        <div class="p-equal-height-row__item">
+          <div class="u-crop--16-9">
+            <div class="article-image p-image-wrapper"></div>
+          </div>
+        </div>
+      {% endif %}
+      <div class="p-equal-height-row__item">
+        <h3 class="p-heading--5">
+          <a class="article-link article-title"></a>
+        </h3>
+      </div>
+      {% if show_excerpt %}
+        <div class="p-equal-height-row__item">
+          <p class="article-excerpt"></p>
+        </div>
+      {% endif %}
+    </div>
+  </template>
+
+  <script src="{{ versioned_static('js/dist/latest-news.js') }}"></script>
+  <script>
+    canonicalLatestNews.fetchLatestNews(
+      {
+        articlesContainerSelector: "#horizontal-latest-articles",
+        articleTemplateSelector: "#horizontal-articles-template",
+        hostname: "https://ubuntu.com/blog/wp-json/wp/v2",
+        {% if tag_id %}tagId: "{{ tag_id }}",{% endif %}
+        {% if tag_name %}tag_name: "{{ tag_name }}",{% endif %}
+        {% if limit %}limit: "{{ limit }}",{% endif %}
+        {% if link_image %}linkImage: true,{% endif %}
+        {% if excerptLength %}excerptLength: "{{ excerptLength }}",{% endif %}
+      }
+    )
+</script>
 </section>
