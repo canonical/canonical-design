@@ -36,6 +36,7 @@ blog_views = BlogViews(
     ),
     blog_title="Design blog",
     tag_ids=[1239],
+    excluded_tags=[3184, 3599, 3265, 4491],
     per_page=11,
 )
 
