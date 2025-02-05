@@ -19,6 +19,7 @@ package-lock.json
 # [build] Built files
 *.*.map
 /static/js/dist/*.js
+/templates/_macros
 
 # [env] Local environment settings
 .*.hash
