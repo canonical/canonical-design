@@ -44,6 +44,7 @@ COPY --from=python-dependencies /root/.local/bin /root/.local/bin
 COPY . .
 RUN rm -rf package.json yarn.lock .babelrc webpack.config.js requirements.txt Dockerfile .stylelintrc .gitignore .djlintrc  
 COPY --from=build-css /srv/static/css static/css
+COPY --from=build-js /srv/node_modules/vanilla-framework/templates/_macros templates/_macros
 COPY --from=build-js /srv/static/js/dist static/js/dist
 
 # Set build ID

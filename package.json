@@ -7,10 +7,11 @@
     "watch": "yarn run watch-css && yarn run watch-js",
     "watch-js": "webpack --watch",
     "watch-css": "watch -p 'static/sass/**/*.scss' -c 'yarn run build'",
-    "build": "yarn run build-css && yarn run build-js",
+    "build": "yarn run build-css && yarn run build-js && yarn run copy-macros",
     "build-js": "yarn run webpack && yarn run build-latest-news",
     "build-latest-news": "cp node_modules/@canonical/latest-news/dist/latest-news.js static/js/dist",
     "build-css": "sass static/sass/styles.scss static/css/styles.css --load-path=node_modules --style=compressed && postcss --map false --use autoprefixer --replace 'static/css/**/*.css'",
+    "copy-macros": "rm -rf templates/_macros && cp -r node_modules/vanilla-framework/templates/_macros templates/_macros",
     "lint-python": "flake8 --extend-ignore=E203 webapp && black --check --line-length 79 webapp",
     "lint-scss": "stylelint static/**/*.scss",
     "lint-js": "prettier -c 'static/js/*.{js,jsx,ts,tsx}'",
@@ -33,7 +34,7 @@
     "postcss": "8.4.49",
     "postcss-cli": "11.0.0",
     "sass": "1.81.0",
-    "vanilla-framework": "4.18.3",
+    "vanilla-framework": "4.20.3",
     "webpack": "^5.97.1"
   },
   "devDependencies": {
