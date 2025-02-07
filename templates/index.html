@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-{% from "_macros/vf_hero.jinja" import vf_hero %}
-
 {% block meta_title %}
   Canonical Design
 {% endblock meta_title %}
@@ -19,16 +17,21 @@
 {% endblock body_class %}
 
 {% block content %}
-  {% call(slot) vf_hero(
-    title_text='Design the Canonical way',
-    layout='50/50-full-width-image'
-    ) -%}
-    {%- if slot == 'description' -%}
-      <p>
-        At Canonical, design is driven by a clear purpose: enabling reliable, secure access to open source software for everyone.
-      </p>
-    {%- endif -%}
-    {%- if slot == 'image' -%}
+
+  <section class="p-section--hero u-no-padding--bottom">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <div class="col">
+          <h1>Design the Canonical way</h1>
+        </div>
+        <div class="col">
+          <p>
+            At Canonical, design is driven by a clear purpose: enabling reliable, secure access to open source software for everyone.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="u-fixed-width">
       <div class="p-image-container--cinematic is-cover">
         {{ image(url="https://assets.ubuntu.com/v1/4d6e7167-hero-img.png",
                 alt="",
@@ -39,8 +42,8 @@
                 loading="auto") | safe
         }}
       </div>
-    {% endif -%}
-  {% endcall -%}
+    </div>
+  </section>
 
   <section class="p-section">
     <div class="row--50-50">
@@ -49,9 +52,9 @@
         <h2>Openness benefits everyone</h2>
       </div>
       <div class="col">
-        <h3 class="p-heading--4">
+        <p class="p-heading--2">
           Open processes and products create higher quality results and unparalleled freedom to use, modify, and distribute.
-        </h3>
+        </p>
         <div class="p-section--shallow">
           <p>
             This is why we are exposing our practice. We open source our <a href="/design-systems">design systems</a>, publish our <a href="/blog">design thoughts</a> and invite open discussion. We default to open for Canonical products and <a href="/open-design">support</a> other efforts in the open design space.
@@ -83,13 +86,13 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-start-large-4 col-9 col-start-medium-3 col-medium-4">
+      <div class="col-start-large-4 col-9">
         <hr class="p-rule--muted" />
         <div class="row">
-          <div class="col-3 col-medium-2 u-sv2">
+          <div class="col-3 col-medium-3 u-sv2">
             <a href="/design-practice">
               <h3 class="p-heading--5">Design practice</h3>
-              <div class="p-image-container">
+              <div class="p-image-container is-cover">
                 {{ image(url="https://assets.ubuntu.com/v1/c2a9b8f8-design-practice.png",
                                 alt="",
                                 width="852",
@@ -101,7 +104,7 @@
               </div>
             </a>
           </div>
-          <div class="col-3 col-medium-2 u-sv2">
+          <div class="col-3 col-medium-3 u-sv2">
             <a href="/brand">
               <h3 class="p-heading--5">Brand</h3>
               <div class="p-image-container">
@@ -116,7 +119,7 @@
               </div>
             </a>
           </div>
-          <div class="col-3 col-medium-2 u-sv2">
+          <div class="col-3 col-medium-3 u-sv2">
             <a href="/design-systems">
               <h3 class="p-heading--5">Design systems</h3>
               <div class="p-image-container">
@@ -131,8 +134,7 @@
               </div>
             </a>
           </div>
-          <hr class="p-rule--muted u-hide--medium u-hide--small" />
-          <div class="col-3 col-medium-2 u-sv2">
+          <div class="col-3 col-medium-3 u-sv2">
             <a href="/blog">
               <h3 class="p-heading--5">Blog</h3>
               <div class="p-image-container">
@@ -147,7 +149,7 @@
               </div>
             </a>
           </div>
-          <div class="col-3 col-medium-2 u-sv2">
+          <div class="col-3 col-medium-3 u-sv2">
             <a href="/open-design">
               <h3 class="p-heading--5">Open design</h3>
               <div class="p-image-container">
@@ -162,7 +164,7 @@
               </div>
             </a>
           </div>
-          <div class="col-3 col-medium-2 u-sv2">
+          <div class="col-3 col-medium-3 u-sv2">
             <a href="https://canonical.com/careers/web-and-design" target="_blank">
               <h3 class="p-heading--5">Careers</h3>
               <div class="p-image-container">
@@ -186,7 +188,7 @@
     <div class="row--50-50">
       <hr class="p-rule" />
       <div class="col">
-        <h2>About the team</h2>
+        <h2>About our team</h2>
       </div>
       <div class="col">
         <p>
