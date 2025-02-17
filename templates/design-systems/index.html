@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
 
 {% block meta_title %}
   Design systems
@@ -63,7 +64,7 @@
           <div class="p-equal-height-row__col">
             <div class="p-equal-height-row__item">
               <div class="p-image-container u-hide--small">
-                {{ image(url="https://assets.ubuntu.com/v1/15e1063e-vanilla-framework.png",
+                {{ image(url="https://assets.ubuntu.com/v1/afd71e65-vanilla-framework.png",
                                 alt="",
                                 width="852",
                                 height="1278",
@@ -72,6 +73,7 @@
                                 attrs={"class": "p-image-container__image"},) | safe
                 }}
               </div>
+              <hr class="p-rule--highlight u-hide--medium" />
             </div>
             <h3 class="p-heading--5 p-equal-height-row__item">
               <a href="https://www.vanillaframework.io"><span class="u-off-screen">Learn more about the</span>Vanilla framework&nbsp;&rsaquo;</a>
@@ -83,7 +85,7 @@
           <div class="p-equal-height-row__col">
             <div class="p-equal-height-row__item">
               <div class="p-image-container u-hide--small">
-                {{ image(url="https://assets.ubuntu.com/v1/29fd77eb-yaru-theme.png",
+                {{ image(url="https://assets.ubuntu.com/v1/867361c6-yaru-theme.png",
                                 alt="",
                                 width="852",
                                 height="1278",
@@ -92,6 +94,7 @@
                                 attrs={"class": "p-image-container__image"},) | safe
                 }}
               </div>
+              <hr class="p-rule--highlight u-hide--medium" />
             </div>
             <h3 class="p-heading--5 p-equal-height-row__item">
               <a href="https://github.com/ubuntu/yaru.dart"><span class="u-off-screen">Explore</span>Yaru theme<span class="u-off-screen">on github</span>&nbsp;&rsaquo;</a>
@@ -103,7 +106,7 @@
           <div class="p-equal-height-row__col">
             <div class="p-equal-height-row__item">
               <div class="p-image-container u-hide--small">
-                {{ image(url="https://assets.ubuntu.com/v1/746d30f1-command-line-standards.png",
+                {{ image(url="https://assets.ubuntu.com/v1/f41ee82a-command-line-standards.png",
                                 alt="",
                                 width="852",
                                 height="1278",
@@ -112,6 +115,7 @@
                                 attrs={"class": "p-image-container__image"},) | safe
                 }}
               </div>
+              <hr class="p-rule--highlight u-hide--medium" />
             </div>
             <h3 class="p-heading--5 p-equal-height-row__item">
               <a href="https://discourse.ubuntu.com/c/design-system/cli-guidelines/62 "><span class="u-off-screen">Learn more about our</span>Command-line standards&nbsp;&rsaquo;</a>
@@ -125,70 +129,67 @@
     </div>
   </section>
 
-  <section class="p-section">
-    <div class="p-section--shallow">
-      <div class="row--50-50">
-        <hr class="p-rule" />
-        <div class="col">
-          <h2>Impactful design at scale</h2>
-        </div>
-        <div class="col">
-          <p class="p-heading--5">Striking a balance between technical complexity and usable interfaces</p>
-          <p>
-            Our design systems include documentation, reusable components, and patterns to speed up design and development, letting us focus on bigger challenges. We develop new components with all our products in mind, ensuring they fit our range of use cases.
-          </p>
-          <p>This means our products look and work consistently, so users know what to expect across our portfolio.</p>
-        </div>
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+
+    {%- if slot == 'title' -%}
+      <h2>Impactful design at scale</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <div class="p-section--shallow">
+        <p class="p-heading--5">Striking a balance between technical complexity and usable interfaces.</p>
+        <p>
+          Our design systems include documentation, reusable components, and patterns to speed up design and development, letting us focus on bigger challenges. We develop new components with all our products in mind, ensuring they fit our range of use cases.
+        </p>
+        <p>This means our products look and work consistently, so users know what to expect across our portfolio.</p>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-9 col-start-large-4">
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Designers</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              Explore our <a href="https://www.figma.com/@Canonical">Figma libraries</a> to create interfaces
-            </p>
-          </div>
-        </div>
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Developers</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              Check out our <a href="https://github.com/canonical/react-components">ready-to-use code components</a> for accurate implementation
-            </p>
-          </div>
-        </div>
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Documentation</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              Read our straightforward <a href="https://vanillaframework.io/docs/index">documentation</a> for both devs and designers to understand how to best use our libraries
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Designers</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        Explore our <a href="https://www.figma.com/@Canonical">Figma libraries</a> to create interfaces
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Developers</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>
+        Check out our <a href="https://github.com/canonical/react-components">ready-to-use code components</a> for accurate implementation
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Documentation</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>
+        Read our straightforward <a href="https://vanillaframework.io/docs/index">documentation</a> for both devs and designers to understand how to best use our libraries
+      </p>
+    {%- endif -%}
+
+  {%- endcall -%}
 
   <section class="p-section">
     <div class="p-section--shallow">
       <div class="row--50-50">
         <hr class="p-rule" />
         <div class="col">
-          <h2>Sharing ownership<br /> for all design system users</h2>
+          <h2>
+            Sharing ownership
+            <br />
+            for all design system users
+          </h2>
         </div>
         <div class="col">
-          <p>Managing a design system that is owned by several teams is a challenge.</p>
+          <p class="p-heading--5">Managing a design system that is owned by several teams is a challenge.</p>
           <p>
             This is why we created a hierarchy of subsystems that assign ownership to their relevant teams. We understand that the flow of new ideas starts at the individual product level and makes its way up to higher parts of the system’s hierarchy. We also apply our brand values from the top down, so that the lower levels of the hierarchy remain consistent.
           </p>
@@ -209,67 +210,59 @@
     </div>
   </section>
 
-  <section class="p-section">
-    <div class="p-section--shallow">
-      <div class="row--50-50">
-        <hr class="p-rule" />
-        <div class="col">
-          <h2>Defined, documented, measured</h2>
-        </div>
-        <div class="col">
-          <p class="p-heading--5">Our approach to delivering design quality.</p>
-        </div>
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+
+    {%- if slot == 'title' -%}
+      <h2>Defined, documented, measured</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <div class="p-section--shallow">
+        <p class="p-heading--5">Our approach to delivering design quality.</p>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-9 col-start-large-4">
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Defined quality standards</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              We want our design system to set the standard for open source design. To do this, we set clear rules for what quality means. We then use these rules to check our designs, code, and documentation and make sure that our design system maintains high standards.
-            </p>
-          </div>
-        </div>
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Design and code documentation</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              We check how complete our documentation is to see if it's correct. We share the guidelines with users even if they're not perfect, helping users save time and focus on what matters. This practical approach helps us cover more ground and improve our documentation over time.
-            </p>
-          </div>
-        </div>
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Measuring our output</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              Metrics help us understand how the design system is being used in our team. We check how often our teams use standard parts versus making their own. It helps us see if our standard parts need improvement. We also keep track of how much each team adds to our system. This keeps everyone involved and helps us spread the work across more teams.
-            </p>
-          </div>
-        </div>
-        <hr class="p-rule--muted" />
-        <div class="row">
-          <div class="col-3 col-medium-3">
-            <h3 class="p-heading--5">Accessibility</h3>
-          </div>
-          <div class="col-6 col-medium-3">
-            <p>
-              We care about making our components follow accessibility rules, to facilitate complying with standards in our products. <a href="/brand/accessibility">Read more about how we tackle accessibility at Canonical</a>.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Defined quality standards</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        We want our design system to set the standard for open source design. To do this, we set clear rules for what quality means. We then use these rules to check our designs, code, and documentation and make sure that our design system maintains high standards.
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Design and code documentation</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>
+        We check how complete our documentation is to see if it's correct. We share the guidelines with users even if they're not perfect, helping users save time and focus on what matters. This practical approach helps us cover more ground and improve our documentation over time.
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Measuring our output</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>
+        Metrics help us understand how the design system is being used in our team. We check how often our teams use standard parts versus making their own. It helps us see if our standard parts need improvement. We also keep track of how much each team adds to our system. This keeps everyone involved and helps us spread the work across more teams.
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">Accessibility</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>
+        We care about making our components follow accessibility rules, to facilitate complying with standards in our products. <a href="/brand/accessibility">Read more about how we tackle accessibility at Canonical</a>.
+      </p>
+    {%- endif -%}
+
+  {%- endcall -%}
 
   <section class="p-section">
     <div class="row--50-50">

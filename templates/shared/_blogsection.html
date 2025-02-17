@@ -1,13 +1,13 @@
 {# djlint: off #}
 <noscript>
-  <section class="{% if section_classes %}{{ section_classes }}{% else %}p-strip{% endif %}">
+  <section class="{% if section_classes %}{{ section_classes }}{% else %}p-section{% endif %}">
     <div class="row">
       <h3><a href="/blog{% if tag_name %}/tag/{{ tag_name }}{% endif %}">Read the latest news on our blog&nbsp;&rsaquo;</a></h3>
     </div>
   </section>
 </noscript>
 
-<section class="u-hide {% if section_classes %}{{ section_classes }}{% else %}p-strip{% endif %}" data-js="latest-news">
+<section class="u-hide {% if section_classes %}{{ section_classes }}{% else %}p-section{% endif %}" data-js="latest-news">
   <div class="row">
       <hr class="p-rule" />
       <div class="col-3 col-medium-6">
