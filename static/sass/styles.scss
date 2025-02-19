@@ -7,6 +7,10 @@
 // import cookie policy
 @import "@canonical/cookie-policy/build/css/cookie-policy";
 
+// Site patterns
+@import "pattern-font-tester";
+@include design-p-font-tester;
+
 // Blockquote style override until officially in vanilla
 .p-pull-quote {
   border-left: 3px solid #e95420;
