@@ -78,13 +78,17 @@
       <div class="col-6 col-medium-2">
         <h2>Brand assets</h2>
       </div>
-      <div class="col-3 col-medium-2 p-card p-media-container">
+      <div class="col-3 col-medium-2 p-card p-media-container is-light">
         <div class="u-vertically-center u-align--center">
-          <img style="min-height: 195px"
-               class="p-card__image"
-               src="https://assets.ubuntu.com/v1/ff6a9a38-ubuntu-logo-2022.svg"
-               alt="Ubuntu logo"
-               width="160" />
+          {{ image(url="https://assets.ubuntu.com/v1/4dd49dac-logo.png",
+            alt="",
+            width="478",
+            height="390",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-card_image"}
+            ) | safe
+          }}
         </div>
         <div class="p-card__content">
           <h3>
@@ -98,9 +102,15 @@
 
       <div class="col-3 col-medium-2 p-card p-media-container is-light">
         <a href="/brand/colour-palette">
-          <img class="p-card__image"
-               src="https://assets.ubuntu.com/v1/ebb3f015-colour-palette.svg"
-               alt="" />
+          {{ image(url="https://assets.ubuntu.com/v1/27e4ad2f-colors.png",
+            alt="",
+            width="478",
+            height="390",
+            hi_def=True,
+            loading="lazy",
+            attrs={"class": "p-card_image"}
+            ) | safe
+          }}
         </a>
         <div class="p-card__content">
           <h3>
