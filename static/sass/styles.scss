@@ -30,3 +30,14 @@
 .article-image a img {
   height: 100%;
 }
+
+.font-tester__demo {
+  height: 300px;
+  margin: 2.5rem 0;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.is-ubuntu-mono {
+  font-family: 'Ubuntu Mono variable';
+}
