@@ -20,13 +20,26 @@
   {% call(slot) vf_hero(
     title_text='Make a difference with your designs',
     subtitle_text='Passion and curiosity <br />are all you need ',
-    layout='50/50'
+    layout='50/50-full-width-image'
     ) -%}
     {%- if slot == 'description' -%}
       <p>
         Non-code contributions are crucial. Help the community, build your portfolio, and sharpen your skills by sharing your expertise on world-changing open source projects.
       </p>
     {%- endif -%}
+    {%- if slot == 'image' -%}
+      <div class="p-image-container--cinematic is-cover">
+        {{ image(url="https://assets.ubuntu.com/v1/52415873-hero-img.png",
+                alt="",
+                width="3696",
+                height="1540",
+                hi_def=True,
+                loading="auto",
+                fmt="jpg",
+                attrs={"class": "p-image-container__image"}) | safe
+        }}
+      </div>
+    {% endif -%}
   {% endcall -%}
 
   <section class="p-section">
@@ -42,7 +55,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">1. Reflect on what skills you have to share</p>
+              <p class="p-heading--5">1.&nbsp;&nbsp;&nbsp;Reflect on what skills you have to share</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -55,7 +68,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">2. Consider your commitment</p>
+              <p class="p-heading--5">2.&nbsp;&nbsp;&nbsp;Consider your commitment</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -68,7 +81,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">3. Understand the different types of contributions</p>
+              <p class="p-heading--5">3.&nbsp;&nbsp;&nbsp;Understand the different types of contributions</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -81,7 +94,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">4. Get familiar with the tools of the trade</p>
+              <p class="p-heading--5">4.&nbsp;&nbsp;&nbsp;Get familiar with the tools of the trade</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -94,7 +107,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">5. Find your first project</p>
+              <p class="p-heading--5">5.&nbsp;&nbsp;&nbsp;Find your first project</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -107,7 +120,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">6. Read about the project</p>
+              <p class="p-heading--5">6.&nbsp;&nbsp;&nbsp;Read about the project</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -120,7 +133,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">7. Understand the assignment</p>
+              <p class="p-heading--5">7.&nbsp;&nbsp;&nbsp;Understand the assignment</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -136,7 +149,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">8. Have fun and be patient</p>
+              <p class="p-heading--5">8.&nbsp;&nbsp;&nbsp;Have fun and be patient</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -149,7 +162,7 @@
         <div class="p-section--shallow">
           <div class="row" role="listitem">
             <div class="col-3 col-medium-3">
-              <p class="p-heading--5">9. Know your worth</p>
+              <p class="p-heading--5">9.&nbsp;&nbsp;&nbsp;Know your worth</p>
             </div>
             <div class="col-6 col-medium-3">
               <p>
@@ -254,7 +267,7 @@
           <div class="row">
             <div class="col-3">
               <hr class="p-rule--muted u-hide--large" />
-              <div class="p-image-container--2-3 is-highlighted is-underlined u-hide--medium u-hide--small">
+              <div class="p-image-container--2-3 is-highlighted is-underlined u-hide--small u-hide--medium">
                 {{ image(url="https://assets.ubuntu.com/v1/2ebaee6d-create-great-os.png",
                                 alt="",
                                 width="852",
@@ -272,7 +285,7 @@
             </div>
             <div class="col-3">
               <hr class="p-rule--muted u-hide--large" />
-              <div class="p-image-container--2-3 is-highlighted is-underlined u-hide--medium u-hide--small">
+              <div class="p-image-container--2-3 is-highlighted is-underlined u-hide--small u-hide--medium">
                 {{ image(url="https://assets.ubuntu.com/v1/e3b8aabb-join-the-osc.png",
                                 alt="",
                                 width="852",
@@ -291,7 +304,7 @@
             </div>
             <div class="col-3">
               <hr class="p-rule--muted u-hide--large" />
-              <div class="p-image-container--2-3 is-highlighted is-underlined u-hide--medium u-hide--small">
+              <div class="p-image-container--2-3 is-highlighted is-underlined u-hide--small u-hide--medium">
                 {{ image(url="https://assets.ubuntu.com/v1/a4fb11f0-work-for-canonical.png",
                                 alt="",
                                 width="852",
