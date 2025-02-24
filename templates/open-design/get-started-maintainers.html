@@ -147,7 +147,7 @@
           </p>
           <div class="p-equal-height-row__item">
             <a href="/design-practice/user-research">
-              <p>Learn more&nbsp;&rsaquo;</p>
+              <p aria-label="Learn more about our research and testing">Learn more&nbsp;&rsaquo;</p>
             </a>
           </div>
         </div>
@@ -171,8 +171,8 @@
             Mapping how users should move from one point to another helps streamline experiences.
           </p>
           <div class="p-equal-height-row__item">
-            <a href="/design-practice/user-research">
-              <p>Learn more&nbsp;&rsaquo;</p>
+            <a href="/design-practice">
+              <p aria-label="Learn more about our design practice">Learn more&nbsp;&rsaquo;</p>
             </a>
           </div>
         </div>
@@ -195,7 +195,7 @@
           <p class="p-equal-height-row__item u-sv1">Beautiful graphics make the difference between good and great software.</p>
           <div class="p-equal-height-row__item">
             <a href="/brand">
-              <p>Learn more&nbsp;&rsaquo;</p>
+              <p aria-label="Learn more about our brand">Learn more&nbsp;&rsaquo;</p>
             </a>
           </div>
         </div>
@@ -220,7 +220,7 @@
           </p>
           <div class="p-equal-height-row__item">
             <a href="/design-systems">
-              <p>Learn more&nbsp;&rsaquo;</p>
+              <p aria-label="Learn more about our design systems">Learn more&nbsp;&rsaquo;</p>
             </a>
           </div>
         </div>
@@ -232,7 +232,7 @@
     <hr class="p-rule--highlight is-fixed-width" />
     <div class="p-section--shallow">
       <div class="u-fixed-width">
-        <h2>What are people saying</h2>
+        <h2>What people are saying</h2>
       </div>
     </div>
     <div class="row--25-75">
@@ -261,15 +261,23 @@
       <div class="p-logo-section">
         <div class="p-logo-section__items">
           <div class="p-logo-section__item">
-            {{ image (
-            url="https://assets.ubuntu.com/v1/b4a1f243-penpot-logo.png",
-            alt="Penpot",
-            width="353",
-            height="312",
-            hi_def=True,
-            loading="lazy",
-            attrs={"class": "p-logo-section__logo"}
-            ) | safe
+            {{ image(url="https://assets.ubuntu.com/v1/b4a1f243-penpot-logo.png",
+                        alt="Penpot",
+                        width="353",
+                        height="312",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"}) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/a0feb2d4-bitcoin_community.svg",
+                        alt="",
+                        width="62",
+                        height="62",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"}) | safe
             }}
           </div>
           <div class="p-logo-section__item">
@@ -308,7 +316,7 @@
               </p>
             </div>
             <div class="p-cta-block">
-              <a href="#">Write designer-friendly briefs&nbsp;&rsaquo;</a>
+              <a href="/open-design/canonical-projects">Write designer-friendly briefs&nbsp;&rsaquo;</a>
             </div>
           </div>
         </div>
@@ -322,7 +330,7 @@
               <p>Amplify your project's reach by sharing it on the Open Design board.</p>
             </div>
             <div class="p-cta-block">
-              <a href="#">Post your project&nbsp;&rsaquo;</a>
+              <a href="https://contribute.design/">Post your project&nbsp;&rsaquo;</a>
             </div>
           </div>
         </div>
@@ -334,8 +342,11 @@
           <div class="col-6">
             <div class="p-section--shallow">
               <p>
-                Do you have an open source project that needs design contributions? <a href="/sauce">>Let us know!</a>
+                Do you have an open source project that needs design contributions? 
               </p>
+            </div>
+            <div class="p-cta-block">
+              <a href="/sauce">Let us know!</a>
             </div>
           </div>
         </div>
@@ -374,9 +385,6 @@
                 Create a brief for your project and your request. Explain what you would like to receive, why and how and outline the skills required.
               </li>
             </ul>
-            <div class="p-cta-block">
-              <a href="#">Here are some project briefs to get you started&nbsp;&rsaquo;</a>
-            </div>
           </div>
         </div>
         <hr class="p-rule--muted" />
@@ -388,7 +396,7 @@
             <ul class="p-list--divided">
               <li class="p-list__item is-ticked">Make sure the acceptance criteria are clear</li>
               <li class="p-list__item is-ticked">Explicitly state if the job is paid or free</li>
-              <li class="p-list__item is-ticked">Explain what licence you are using in easy-to-understand terms</li>
+              <li class="p-list__item is-ticked">Explain what license you are using in easy-to-understand terms</li>
               <li class="p-list__item is-ticked">Be transparent about your design review process</li>
             </ul>
           </div>
