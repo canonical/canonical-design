@@ -21,12 +21,16 @@ session = requests.Session()
 
 @app.errorhandler(Exception)
 def render_error_page(error):
-    app.logger.error(f"Error occurred: {error}", exc_info=os.environ.get("DISPLAY_FULL_TRACEBACK").lower() == "true")
+    app.logger.error(
+        f"Error occurred: {error}",
+        exc_info=os.environ.get("DISPLAY_FULL_TRACEBACK").lower() == "true",
+    )
     error_code = getattr(error, "code", 500)
     error_message = getattr(error, "description", "Something went wrong!")
     return render_template(
         "error.html", error_code=int(error_code), error_message=error_message
     )
+
 
 blog_views = BlogViews(
     api=BlogAPI(
