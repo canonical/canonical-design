@@ -7,6 +7,10 @@
 // import cookie policy
 @import "@canonical/cookie-policy/build/css/cookie-policy";
 
+// Site patterns
+@import "pattern-font-tester";
+@include design-p-font-tester;
+
 // Blockquote style override until officially in vanilla
 .p-pull-quote {
   border-left: 3px solid #e95420;
@@ -29,4 +33,15 @@
 
 .article-image a img {
   height: 100%;
+}
+
+.font-tester__demo {
+  height: 300px;
+  margin: 2.5rem 0;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.is-ubuntu-mono {
+  font-family: "Ubuntu Mono variable", monospace;
 }
