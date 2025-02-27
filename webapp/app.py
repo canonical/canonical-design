@@ -1,5 +1,7 @@
 import requests
 import os
+import flask
+import yaml
 
 from flask import render_template, request
 from urllib.parse import parse_qs, urlencode
@@ -17,6 +19,25 @@ app = FlaskBase(
 )
 
 session = requests.Session()
+
+with open("_data/resources.yaml", "r") as stream:
+    parsed_resources = yaml.safe_load(stream)
+
+with open("_data/icons.yaml", "r") as stream:
+    parsed_icons = yaml.safe_load(stream)
+
+resources_data = {
+    "logos": parsed_resources,
+    "icons": parsed_icons,
+}
+
+
+@app.context_processor
+def global_template_context():
+    return {
+        "resources_data": resources_data,
+        "path": flask.request.path,
+    }
 
 
 @app.errorhandler(Exception)
