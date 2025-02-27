@@ -1,308 +1,235 @@
 {% extends "base.html" %}
 
+{% from "_macros/vf_quote-wrapper.jinja" import vf_quote_wrapper %}
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+
 {% block meta_title %}
-  Open Design
+  Contribute to Open Design
 {% endblock meta_title %}
 
 {% block meta_description %}
-  Canonical Open Design
 {% endblock meta_description %}
 
 {% block meta_copydoc %}
-  <!-- to be added -->
+  https://docs.google.com/document/d/1ylhSHHbC0KN_dT3IJUqrgBXxgwx2_HuPLXkEJGata2o/edit?tab=t.0
 {% endblock meta_copydoc %}
 
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
 {% block content %}
-  <div class="wrapper u-no-margin-top">
-    <main id="main-content" class="inner-wrapper">
-      <div class="p-suru--25-75">
-        <section class="p-section--hero">
-          <div class="row--50-50">
-            <div class="col">
-              <h1>Elevate open source projects with design</h1>
-            </div>
-            <div class="col">
-              <p>
-                Non-code contributions are crucial. Whether you are a maintainer looking to find designers to help you or improve your own design skills, or a designer looking to contribute to open source, you can learn, collaborate, and thrive in the open design community. 
-              </p>
-            </div>
-          </div>
-        </section>
+  {% call(slot) vf_hero(
+    title_text='Elevate open source projects with design',
+    layout='50/50-full-width-image'
+    ) -%}
+    {%- if slot == 'description' -%}
+      <p>
+        Non-code contributions are crucial. Whether you are a maintainer looking to find designers to help you or improve your
+        own design skills, or a designer looking to contribute to open source, you can learn, collaborate and thrive in the
+        open design community.
+      </p>
+    {%- endif -%}
+    {%- if slot == 'image' -%}
+      <div class="p-image-container is-cover is-highlighted">
+        {{ image(url="https://assets.ubuntu.com/v1/4206dcc7-sauce_hero.svg",
+                alt="",
+                width="2400",
+                height="1000",
+                hi_def=True,
+                attrs={"class": "p-image-container__image"},
+                loading="auto") | safe
+        }}
       </div>
+    {% endif -%}
+  {% endcall -%}
 
-      <section class="p-section">
-        <div class="row--50-50">
-          <hr class="p-rule" />
-          <div class="col">
-            <h2>Design should be transparent, inclusive, and driven by collective effort.</h2>
-          </div>
-          <div class="col">
-            <p>
-              Open design is a collaborative and transparent approach to creating products and experiences. It's about involving the community in the design process, sharing ideas openly, and building on collective wisdom to create solutions that work for everyone.
-            </p>
-            <div class="u-fixed-width">
-              <div class="p-image-container--16-9 is-highlighted">
-                {{ image(url="https://assets.ubuntu.com/v1/91a46784-transparent-inclusive-collab.png",
-                                alt="",
-                                width="1800",
-                                height="1013",
-                                hi_def=True,
-                                loading="auto",
-                                attrs={"class": "p-image-container__image"},) | safe
-                }}
-              </div>
-            </div>
-
-          </div>
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>Design should be transparent, inclusive, and driven by a collective effort.</h2>
+      </div>
+      <div class="col">
+        <p>
+          Open design is a collaborative and transparent approach to creating products and experiences. It's about
+          involving the community in the design process, sharing ideas openly and building on collective wisdom to create
+          solutions that work for everyone.
+        </p>
+        <div class="p-image-container">
+          {{ image(url="https://assets.ubuntu.com/v1/91a46784-transparent-inclusive-collab.png",
+                    alt="",
+                    width="1800",
+                    height="1013",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-image-container__image"},) | safe
+          }}
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section class="p-section">
-        <div class="row">
-          <div class="col">
+  <section class="p-section">
+    {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
 
-            <hr class="p-rule" />
-            <h2>Our principles</h2>
-          </div>
-        </div>
+      {%- if slot == 'title' -%}
+        <h2>Our principles of openness</h2>
+      {%- endif -%}
 
-        <div class="row">
-          <div class="col-9 col-start-large-4 col-medium-5 col-start-medium-2">
-            <hr class="p-rule" />
-            <div class="row">
-              <div class="col-3 col-medium-2">
-                <h3 class="p-heading--5">Accessibility</h3>
-              </div>
-              <div class="col-6 col-medium-3">
-                <p>
-                  Every human being has a unique experience and moves in the world in their own way. Understanding how to make technology more accessible and respectful of individual’s circumstances is key to a better future.
-                </p>
-              </div>
-            </div>
-            <hr class="p-rule" />
-            <div class="row">
-              <div class="col-3 col-medium-2">
-                <h3 class="p-heading--5">Transparency</h3>
-              </div>
-              <div class="col-6 col-medium-3">
-                <p>
-                  Sharing the process is as important as sharing the result. This allows people to better understand a project’s ambitions, and makes it easier for anyone to chime in with interesting suggestions.
-                </p>
-              </div>
-            </div>
-            <hr class="p-rule" />
-            <div class="row">
-              <div class="col-3 col-medium-2">
-                <h3 class="p-heading--5">Co-creation</h3>
-              </div>
-              <div class="col-6 col-medium-3">
-                <p>
-                  Multiple perspectives help identify opportunities that a single person might overlook. Directly involving stakeholders and users in the development process gives communities a sense of ownership and promotes creative problem-solving.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {%- if slot == 'list_item_title_1' -%}
+        <h3 class="p-heading--5">Accessibility</h3>
+      {%- endif -%}
 
-      <section class="p-section">
-        <div class="row">
-          <hr class="p-rule" />
-          <div class="col">
-            <h2>Why is open design important?</h2>
-          </div>
-        </div>
-        <div class="row u-sv3">
-          <div class="col-start-medium-3 col-medium-4 col-start-large-4 col-9">
-            <div class="row">
-              <div class="col-3">
-                <div class="p-image-container--2-3 is-highlighted">
-                  {{ image(url="https://assets.ubuntu.com/v1/f2d6b250-od_sharing-knowledge.png",
-                                    alt="",
-                                    width="1200",
-                                    height="1800",
-                                    hi_def=True,
-                                    loading="lazy",
-                                    attrs={"class": "p-image-container__image"},) | safe
-                  }}
-                </div>
-                <h5>Sharing knowledge lifts everyone up</h5>
-                <p>Working in the open allows more people to get access to good quality resources and learn from diverse sources.</p>
-              </div>
-              <div class="col-3">
-                <div class="p-image-container--2-3 is-highlighted">
-                  {{ image(url="https://assets.ubuntu.com/v1/6d5e59f1-od_diverse-pov.png",
-                                    alt="",
-                                    width="1201",
-                                    height="1800",
-                                    hi_def=True,
-                                    loading="lazy",
-                                    attrs={"class": "p-image-container__image"},) | safe
-                  }}
-                </div>
-                <h5>Diverse point-of-views make for better experiences</h5>
-                <p>Working in the open allows more people to get access to good quality resources and learn from diverse sources.</p>
-              </div>
-              <div class="col-3">
-                <div class="p-image-container--2-3 is-highlighted">
-                  {{ image(url="https://assets.ubuntu.com/v1/c509341e-od_real-life-projects.png",
-                                    alt="",
-                                    width="1200",
-                                    height="1800",
-                                    hi_def=True,
-                                    loading="lazy",
-                                    attrs={"class": "p-image-container__image"},) | safe
-                  }}
-                </div>
-                <h5>Real life projects are important to build skills</h5>
-                <p>Working in the open allows more people to get access to good quality resources and learn from diverse sources.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row--25-75">
-          <div class="col"></div>
-          <div class="col">
-            <blockquote class="p-pull-quote">
-              <p class="p-pull-quote__quote">
-                Bringing in diverse perspectives and experiences is important for accessibility. Designers can help translate insights of people from different backgrounds to improve.
+      {%- if slot == 'list_item_description_1' -%}
+        <p>
+          Every human being has a unique experience and moves in the world in their own way. Understanding how to make
+          technology more accessible and respectful of an individual's circumstances is key to a better future.
+        </p>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_2' -%}
+        <h3 class="p-heading--5">Transparency</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_2' -%}
+        <p>
+          Sharing the process is as important as sharing the result. This helps everyone understand a project’s ambitions, and
+          makes it easier for anyone to chime in.
+        </p>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_3' -%}
+        <h3 class="p-heading--5">Co-creation</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_3' -%}
+        <p>
+          Multiple perspectives help identify opportunities that a single person might overlook. Directly involving stakeholders
+          and users in the development process gives communities a sense of ownership and promotes creative problem-solving.
+        </p>
+      {%- endif -%}
+
+    {%- endcall -%}
+  </section>
+
+  <section>
+    <div class="p-section--shallow">
+      <div class="u-fixed-width">
+        <hr class="p-rule" />
+        <h2>Why is open design important?</h2>
+      </div>
+    </div>
+    <div class="p-section--shallow">
+      <div class="row">
+        <div class="col-9 col-start-large-4">
+          <hr class="p-rule--muted u-hide--medium u-hide--small" />
+          <div class="p-equal-height-row">
+            <div class="p-equal-height-row__col">
+              <h3 class="p-heading--5 p-equal-height-row__item">
+                Sharing knowledge lifts
+                <br />
+                everybody up
+              </h3>
+              <p class="p-equal-height-row__item">
+                Working in the open allows more people to get access to good quality resources and learn from diverse
+                sources.
               </p>
-              <span class="p-pull-quote__citation">Anonymous survey participant</span>
-            </blockquote>
-          </div>
-        </div>
-      </section>
-
-      <section class="p-section">
-        <div class="row">
-          <hr class="p-rule" />
-          <div class="col">
-            <h2>Open design is for you</h2>
-          </div>
-        </div>
-        <div class="row u-sv3">
-          <div class="col-start-medium-3 col-medium-4 col-start-large-4 col-9">
-            <div class="row">
-              <div class="col-3">
-                <div class="p-image-container--16-9 is-underlined">
-                  {{ image(url="https://assets.ubuntu.com/v1/098c5887-open-design-contri.png",
-                                    alt="",
-                                    width="568",
-                                    height="320",
-                                    hi_def=True,
-                                    loading="lazy",
-                                    attrs={"class": "p-image-container__image"},) | safe
-                  }}
-                </div>
-                <h5>Contribute to open design</h5>
-                <p>The open source world can be intimidating at first. Check out our guide on how to get started to contribute!</p>
-                <hr />
-                <p>
-                  <a href="#">Get started&nbsp;›</a>
-                </p>
-              </div>
-              <div class="col-3">
-                <div class="p-image-container--16-9 is-underlined">
-                  {{ image(url="https://assets.ubuntu.com/v1/dddf19d6-canonical-projects-contri.png",
-                                    alt="",
-                                    width="568",
-                                    height="320",
-                                    hi_def=True,
-                                    loading="lazy",
-                                    attrs={"class": "p-image-container__image"},) | safe
-                  }}
-                </div>
-                <h5>Contribute to Canonical projects</h5>
-                <p>
-                  Explore Canonical projects that are open to design contributions, and find the resources you need to make your first contribution.
-                </p>
-                <hr />
-                <p>
-                  <a href="#">Contribute to Canonical&nbsp;›</a>
-                </p>
-              </div>
-              <div class="col-3">
-                <div class="p-image-container--16-9 is-underlined">
-                  {{ image(url="https://assets.ubuntu.com/v1/da5045f2-community-projects-contri.png",
-                                    alt="",
-                                    width="568",
-                                    height="320",
-                                    hi_def=True,
-                                    loading="lazy",
-                                    attrs={"class": "p-image-container__image"},) | safe
-                  }}
-                </div>
-                <h5>Contribute to community projects</h5>
-                <p>
-                  Discover the potential of design contributions in open source projects and how to attract designers to your project.
-                </p>
-                <hr />
-                <p>
-                  <a href="#">Contribute to the community&nbsp;›</a>
-                </p>
-              </div>
+            </div>
+            <div class="p-equal-height-row__col">
+              <h3 class="p-heading--5 p-equal-height-row__item">Diverse point-of-views make for better experiences</h3>
+              <p class="p-equal-height-row__item">
+                Including designers in open source projects helps balance user needs and technical constraints, and
+                bridges
+                the gap between maintainers and users.
+              </p>
+            </div>
+            <div class="p-equal-height-row__col">
+              <h3 class="p-heading--5 p-equal-height-row__item">Real-life projects are important to build skills</h3>
+              <p class="p-equal-height-row__item">
+                Open source projects help designers refine their skills and improve, and collaborate with people from
+                around
+                the world to build meaningful tools.
+              </p>
             </div>
           </div>
         </div>
-      </section>
-      <!--
-        <section class="p-section">
-            <div class="row">
-                <hr class="p-rule" />
-                <div class="col-3 col-medium-6">
-                    <div class="p-section--shallow">
-                        <h2>Explore what we're up to</h2>
-                    </div>
-                </div>
-                <div class="col-9 col-medium-6">
-                    <div class="row p-section--shallow" id="ubuntu-desktop-latest">
-                        <div class="col-3 col-medium-2 u-equal-height-items">
-                            <div class="u-crop--16-9">
-                                <div class="article-image p-image-wrapper">
-                                    <a href="/blog/canonical-releases-ubuntu-24-04-noble-numbat">
-                                        <img src="https://ubuntu.com/wp-content/uploads/540c/Desktop-Screenshot-24.04-LTS-Noble-Numbat-1080p.png" alt="Desktop screenshot of Ubuntu 24.04 LTS Noble Numbat" width="1866" height="1080" />
-                                    </a>
-                                </div>
-                            </div>
-                            <h3 class="p-heading--5"><a class="article-link article-title" href="/blog/canonical-releases-ubuntu-24-04-noble-numbat">Canonical releases Ubuntu 24.04 LTS Noble Numbat</a></h3>
-                            <p class="article-excerpt">Canonical’s 10th Long Term Supported release sets a new standard in performance engineering, enterprise security and developer experience.</p>
-                        </div>
-                        <div class="col-3 col-medium-2 u-equal-height-items">
-                            <div class="u-crop--16-9">
-                                <div class="article-image p-image-wrapper">
-                                    <a href="/blog/ubuntu-desktop-24-04-noble-numbat-deep-dive">
-                                        <img src="https://ubuntu.com/wp-content/uploads/a903/24.04-LTS-Noble-Numbat-Launch-Video-Thumbnail.png" alt="Desk in a dark room showing a monitor running Ubuntu 24.04 LTS Noble Numbat. The words &quot;Ubuntu 24.04 LTS&quot; sit above the monitor, with a Canonical Ubuntu logo on the lop left. The desk has grayscale items to the left of the screen, which include a picture of a family and a mug with the grayscale Canonical logo lit by an overhead light." width="1280" height="720" />
-                                    </a>
-                                </div>
-                            </div>
-                            <h3 class="p-heading--5"><a class="article-link article-title" href="/blog/ubuntu-desktop-24-04-noble-numbat-deep-dive">Ubuntu Desktop 24.04 LTS: Noble Numbat deep dive</a></h3>
-                            <p class="article-excerpt">Learn how Ubuntu Desktop 24.04 LTS is built to empower open source developers and deliver innovation for the next 12 years.</p>
-                        </div>
-                        <div class="col-3 col-medium-2 u-equal-height-items">
-                            <div class="u-crop--16-9">
-                                <div class="article-image p-image-wrapper">
-                                    <a href="/blog/the-coronation-of-a-new-mascot-noble-numbat">
-                                        <img src="https://ubuntu.com/wp-content/uploads/c919/noble1.png" alt="Wallpaper of a crown with two stylized numbats mounted left and right. The centerpiece is a spike with the Ubuntu logo. Orange/Aubergine gradient background." width="1600" height="900" />
-                                    </a>
-                                </div>
-                            </div>
-                            <h3 class="p-heading--5"><a class="article-link article-title" href="/blog/the-coronation-of-a-new-mascot-noble-numbat">The Coronation of a New Mascot: Noble Numbat</a></h3>
-                            <p class="article-excerpt">On the eve of our 20th anniversary we are thrilled to present the Noble Numbat, the mascot for Ubuntu 24.04 LTS.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
--->
-
-      <section class="p-section">
-        <hr class="p-separator is-fixed-width" />
-        <div class="u-fixed-width">
-          Have something to add? <a href="/managed">Help improve this page&nbsp;›</a>
+      </div>
+    </div>
+    <div class="p-section--shallow">
+      <div class="u-fixed-width">
+        <div class="p-image-container">
+          {{ image(url="https://assets.ubuntu.com/v1/80032255-why-is-od-important.png",
+                    alt="",
+                    width="2464",
+                    height="1028",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-image-container__image"},) | safe
+          }}
         </div>
-      </section>
+      </div>
+    </div>
+    {% call(slot) vf_quote_wrapper(
+      quote_size="medium",
+      quote_text="Bringing in diverse perspectives and experiences is important for accessibility. Designers can help
+      translate insights of people from different backgrounds to improve.",
+      citation_source_name_text="Anonymous survey participant"
+      ) -%}
+    {% endcall -%}
+  </section>
 
-    </main>
-    <!-- /.inner-wrapper -->
-  </div>
+  <section class="p-section">
+    {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+
+      {%- if slot == 'title' -%}
+        <h2>Open design is for you</h2>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_1' -%}
+        <h3 class="p-heading--5">Contribute to open design</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_1' -%}
+        <p>The open source world can be intimidating at first. Check out our guide on how to get started to contribute!</p>
+        <div class="p-cta-block">
+          <a href="/open-design/get-started-for-designers">Get started<span class="u-hide">with open-design for
+          designers</span>&nbsp;&rsaquo;</a>
+        </div>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_2' -%}
+        <h3 class="p-heading--5">Contribute to Canonical projects</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_2' -%}
+        <p>
+          Explore Canonical projects that are open to design contributions, and find the resources you need to make your first
+          contribution.
+        </p>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_title_3' -%}
+        <h3 class="p-heading--5">Find designers for your project</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_3' -%}
+        <p>
+          Discover the potential of design contributions in open source projects and how to attract designers to your project.
+        </p>
+        <div class="p-cta-block">
+          <a href="/open-design/get-started-for-maintainers">Design contribution for maintainers<span class="u-hide">with
+          open-design</span>&nbsp;&rsaquo;</a>
+        </div>
+      {%- endif -%}
+
+    {%- endcall -%}
+  </section>
+
+  {% with section_classes='p-section--deep', tag_id='1239', limit='3', hide_date=True, link_image=True, show_image=True,
+    show_excerpt=True, excerptLength=200 %}
+    {% include "/shared/_blogsection.html" %}
+  {% endwith %}
+
 {% endblock content %}

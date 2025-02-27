@@ -1,4 +1,5 @@
 import requests
+import os
 import flask
 import yaml
 
@@ -41,6 +42,10 @@ def global_template_context():
 
 @app.errorhandler(Exception)
 def render_error_page(error):
+    app.logger.error(
+        f"Error occurred: {error}",
+        exc_info=os.environ.get("DISPLAY_FULL_TRACEBACK").lower() == "true",
+    )
     error_code = getattr(error, "code", 500)
     error_message = getattr(error, "description", "Something went wrong!")
     return render_template(
