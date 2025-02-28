@@ -9,6 +9,8 @@
 
 // Site patterns
 @import "pattern-resources";
+@import "pattern-font-tester";
+@include design-p-font-tester;
 @include design-p-resources;
 @include vf-p-icons;
 @include vf-p-icon-highlight-off;
