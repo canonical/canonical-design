@@ -224,7 +224,19 @@
         </div>
       {%- endif -%}
 
+      {%- if slot == 'list_item_title_4' -%}
+        <h3 class="p-heading--5">Get in touch</h3>
+      {%- endif -%}
+
+      {%- if slot == 'list_item_description_4' -%}
+        <p>The Canonical Open Design Working Group would love to hear from you.</p>
+        <div class="p-cta-block">
+          <a href="/sauce">Contact us&nbsp;&rsaquo;</a>
+        </div>
+      {%- endif -%}
+
     {%- endcall -%}
+
   </section>
 
   {% with section_classes='p-section--deep', tag_id='1239', limit='3', hide_date=True, link_image=True, show_image=True,
