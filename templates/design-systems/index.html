@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+
+{% block meta_title %}
+  Design systems
+{% endblock meta_title %}
+
+{% block meta_description %}
+  Overview of our design system with links to docs, contribution processes, etc.
+{% endblock meta_description %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1yAkmzhn39TeK51cM0k4Ob8uVVaUVnCrLRX9K4dl8FDQ
+{% endblock meta_copydoc %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+
+  {% call(slot) vf_hero(
+    title_text='Precision components<br /> made for modern systems',
+    subtitle_text='A design system for working across a broad product portfolio',
+    layout='50/50'
+    ) -%}
+    {%- if slot == 'cta' -%}
+      <a href="https://vanillaframework.io/" class="p-button--positive">Explore our design systems</a>
+    {%- endif -%}
+    {%- if slot == 'image' -%}
+      <div class="p-image-container--16-9">
+        {{ image(url="https://assets.ubuntu.com/v1/fb127340-hero-img.png",
+                alt="",
+                width="3480",
+                height="1782",
+                hi_def=True,
+                attrs={"class": "p-image-container__image"},
+                loading="auto") | safe
+        }}
+      </div>
+    {%- endif -%}
+  {% endcall -%}
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>Accommodating complexity</h2>
+        </div>
+        <div class="col">
+          <p class="p-heading--5">Our design system accommodates our complex products while remaining easy to use.</p>
+          <p>
+            To cater to the diverse environments in which we use our components, we have split our components into three subsystems:
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9 col-medium-6 col-start-large-4">
+        <div class="p-equal-height-row">
+          <div class="p-equal-height-row__col">
+            <div class="p-equal-height-row__item">
+              <div class="p-image-container u-hide--small">
+                {{ image(url="https://assets.ubuntu.com/v1/afd71e65-vanilla-framework.png",
+                                alt="",
+                                width="852",
+                                height="1278",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"},) | safe
+                }}
+              </div>
+              <hr class="p-rule--highlight u-hide--medium" />
+            </div>
+            <h3 class="p-heading--5 p-equal-height-row__item">
+              <a href="https://www.vanillaframework.io"><span class="u-off-screen">Learn more about the</span>Vanilla framework&nbsp;&rsaquo;</a>
+            </h3>
+            <p class="p-equal-height-row__item">
+              Maintained and owned by Canonical, and used in our enterprise products and content websites.
+            </p>
+          </div>
+          <div class="p-equal-height-row__col">
+            <div class="p-equal-height-row__item">
+              <div class="p-image-container u-hide--small">
+                {{ image(url="https://assets.ubuntu.com/v1/867361c6-yaru-theme.png",
+                                alt="",
+                                width="852",
+                                height="1278",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"},) | safe
+                }}
+              </div>
+              <hr class="p-rule--highlight u-hide--medium" />
+            </div>
+            <h3 class="p-heading--5 p-equal-height-row__item">
+              <a href="https://github.com/ubuntu/yaru.dart"><span class="u-off-screen">Explore</span>Yaru theme<span class="u-off-screen">on github</span>&nbsp;&rsaquo;</a>
+            </h3>
+            <p class="p-equal-height-row__item">
+              Owned and maintained by our Community, and used for Ubuntu and its desktop applications.
+            </p>
+          </div>
+          <div class="p-equal-height-row__col">
+            <div class="p-equal-height-row__item">
+              <div class="p-image-container u-hide--small">
+                {{ image(url="https://assets.ubuntu.com/v1/f41ee82a-command-line-standards.png",
+                                alt="",
+                                width="852",
+                                height="1278",
+                                hi_def=True,
+                                loading="lazy",
+                                attrs={"class": "p-image-container__image"},) | safe
+                }}
+              </div>
+              <hr class="p-rule--highlight u-hide--medium" />
+            </div>
+            <h3 class="p-heading--5 p-equal-height-row__item">
+              <a href="https://discourse.ubuntu.com/c/design-system/cli-guidelines/62 "><span class="u-off-screen">Learn more about our</span>Command-line standards&nbsp;&rsaquo;</a>
+            </h3>
+            <p class="p-equal-height-row__item">
+              We are currently working to expand our guidelines into a more comprehensive rulebook.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+
+    {%- if slot == 'title' -%}
+      <h2>Impactful design at scale</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <div class="p-section--shallow">
+        <p class="p-heading--5">Striking a balance between technical complexity and usable interfaces.</p>
+        <p>
+          Our design systems include documentation, reusable components, and patterns to speed up design and development, letting us focus on bigger challenges. We develop new components with all our products in mind, ensuring they fit our range of use cases.
+        </p>
+        <p>This means our products look and work consistently, so users know what to expect across our portfolio.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Designers</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        Explore our <a href="https://www.figma.com/@Canonical">Figma libraries</a> to create interfaces
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Developers</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>
+        Check out our <a href="https://github.com/canonical/react-components">ready-to-use code components</a> for accurate implementation
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Documentation</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>
+        Read our straightforward <a href="https://vanillaframework.io/docs/index">documentation</a> for both devs and designers to understand how to best use our libraries
+      </p>
+    {%- endif -%}
+
+  {%- endcall -%}
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>
+            Sharing ownership
+            <br />
+            for all design system users
+          </h2>
+        </div>
+        <div class="col">
+          <p class="p-heading--5">Managing a design system that is owned by several teams is a challenge.</p>
+          <p>
+            This is why we created a hierarchy of subsystems that assign ownership to their relevant teams. We understand that the flow of new ideas starts at the individual product level and makes its way up to higher parts of the system’s hierarchy. We also apply our brand values from the top down, so that the lower levels of the hierarchy remain consistent.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <div class="p-image-container is-cover">
+        {{ image(url="https://assets.ubuntu.com/v1/7fcb1203-design-systems-hierarchy.png",
+                alt="",
+                width="3696",
+                height="1540",
+                hi_def=True,
+                loading="lazy",
+                attrs={"class": "p-image-container__image"},) | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=false, is_list_full_width_on_tablet=false) -%}
+
+    {%- if slot == 'title' -%}
+      <h2>Defined, documented, measured</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <div class="p-section--shallow">
+        <p class="p-heading--5">Our approach to delivering design quality.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Defined quality standards</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <p>
+        We want our design system to set the standard for open source design. To do this, we set clear rules for what quality means. We then use these rules to check our designs, code, and documentation and make sure that our design system maintains high standards.
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Design and code documentation</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <p>
+        We check how complete our documentation is to see if it's correct. We share the guidelines with users even if they're not perfect, helping users save time and focus on what matters. This practical approach helps us cover more ground and improve our documentation over time.
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Measuring our output</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <p>
+        Metrics help us understand how the design system is being used in our team. We check how often our teams use standard parts versus making their own. It helps us see if our standard parts need improvement. We also keep track of how much each team adds to our system. This keeps everyone involved and helps us spread the work across more teams.
+      </p>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">Accessibility</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <p>
+        We care about making our components follow accessibility rules, to facilitate complying with standards in our products. <a href="/brand/accessibility">Read more about how we tackle accessibility at Canonical</a>.
+      </p>
+    {%- endif -%}
+
+  {%- endcall -%}
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>About the design system team</h2>
+      </div>
+      <div class="col">
+        <p>
+          Our Design System team consists of UX designers, UX writers, and Visual designers, who spend 20% of their time ensuring consistency and quality across our design system. They're supported by three web engineers who focus on Vanilla. For Ubuntu and its desktop apps, we team up with Flutter developers and the community.
+        </p>
+        <p>
+          Read more about our design efforts and working groups on the <a href="/design-practice">design practice</a> page.
+        </p>
+        <div class="p-image-container">
+          {{ image(url="https://assets.ubuntu.com/v1/f697dc62-about-ds-team.png",
+                    alt="",
+                    width="1800",
+                    height="1146",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-image-container__image"},) | safe
+          }}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% with section_classes='p-section--deep', tag_id='1239', limit='3', hide_date=True, link_image=True, show_image=True, show_excerpt=True, excerptLength=200 %}
+    {% include "/shared/_blogsection.html" %}
+  {% endwith %}
+
+{% endblock content %}

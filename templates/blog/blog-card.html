@@ -1,0 +1,33 @@
+<div class="p-section--shallow">
+  <div class="row">
+    <hr class="p-rule" />
+    <div class="col-3 u-hide--small u-hide--medium">
+      {% if article.image and article.image.source_url %}
+        <a href="/blog/{{ article.slug }}" aria-hidden="true" tabindex="-1">
+          <div class="p-image-wrapper">{{ article.image.rendered|safe }}</div>
+        </a>
+      {% endif %}
+    </div>
+    <div class="col-6 col-medium-4">
+      <h3 class="p-heading--4">
+        <a href="/blog/{{ article.slug }}">{{ article.title.rendered|safe }}</a>
+      </h3>
+      {% if article.group and (article.group.name != (article.display_category.name if article.display_category else "")) %}
+        <span class="p-chip--information">
+          <span class="p-chip__value">{{ article.group.name }}</span>
+        </span>
+      {% endif %}
+      <span class="p-chip--information">
+        <span class="p-chip__value">{% include 'blog/singular-category.html' %}</span>
+      </span>
+      <p class="u-hide--small u-hide--medium">{{ article.excerpt.raw.replace('[…]', '') |truncate(1000) }}...</p>
+    </div>
+    <div class="aside col-3 col-medium-2">
+      <p>
+        <a href="/blog/author/{{ article.author.slug }}">{{ article.author.name }}</a>
+        <br />
+        {{ article.date }}
+      </p>
+    </div>
+  </div>
+</div>

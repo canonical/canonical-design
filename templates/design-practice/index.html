@@ -1,0 +1,374 @@
+{% extends "base.html" %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+
+{% block meta_title %}
+  Design practice
+{% endblock meta_title %}
+
+{% block meta_description %}
+  Canonical design practice
+{% endblock meta_description %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/17jWsB7cF8ecUWlwD8yMTWcr3KB21N3PoYFJZIpP0n5E/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+  {% call(slot) vf_hero(
+    title_text='Designing in the open',
+    subtitle_text='We bring the spirit of Ubuntu to life',
+    layout='50/50-full-width-image'
+    ) -%}
+    {%- if slot == 'description' -%}
+      <p>
+        We embody <a href="https://ubuntu.com/about">the philosophy of Ubuntu</a> to lead open source and design towards a more collaborative future. We work in the open, base our decisions on research, and make sure the experiences we intend for our users are accessible and available.
+      </p>
+    {%- endif -%}
+    {%- if slot == 'image' -%}
+      <div class="p-image-container--cinematic is-highlighted is-cover">
+        {{ image(url="https://assets.ubuntu.com/v1/83ccb9d8-hero-img.png",
+                alt="",
+                width="3696",
+                height="1541",
+                hi_def=True,
+                attrs={"class": "p-image-container__image"},
+                loading="auto") | safe
+        }}
+      </div>
+    {% endif -%}
+  {% endcall -%}
+
+  <section class="p-section">
+    <div class="u-fixed-width u-sv2">
+      <h2 class="p-text--small-caps">Our design principles</h2>
+    </div>
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h3 class="p-heading--2">Human by design</h3>
+        </div>
+        <div class="col">
+          <p>
+            Our mission is to <a href="https://ubuntu.com/community/ethos/mission">bring free software to the widest audience</a>. As designers, we make sure that software is accessible to everyone.
+          </p>
+          <p>
+            We listen to our users and take user research seriously. We engage with our community, and align our work with the principle of <a href="https://ubuntu.com/about">humanity to others</a>, creating solutions that are meaningful and impactful.
+          </p>
+          <div class="p-cta-block">
+            <a href="/design-practice/user-research">How we do user research&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h3 class="p-heading--2">Accessible to everyone</h3>
+        </div>
+        <div class="col">
+          <p>
+            Open source is at our core. But just because anyone can get our code, doesn’t mean it’s accessible. We make sure that every user has a great experience with our products, regardless of their abilities.
+          </p>
+          <p>
+            This also means our designs go beyond the usual graphic user interfaces. We also consider command line functionality, inclusive language, and how to write documentation.
+          </p>
+          <div class="p-cta-block">
+            <a href="/brand/accessibility">About our accessibility practice&nbsp;&rsaquo;</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h3 class="p-heading--2">Inherently complex</h3>
+        </div>
+        <div class="col">
+          <p>
+            From Ubuntu to enterprise solutions, our diverse portfolio spans simple to complex products. Practiced users demand sophisticated features, challenging us to balance depth with user-friendliness.
+          </p>
+          <p>
+            Despite varying complexity, we strive to create a cohesive ecosystem. Our goal is a seamless experience across all products.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h3 class="p-heading--2">Designed in the open</h3>
+        </div>
+        <div class="col">
+          <p>
+            We are open, transparent and collaborative throughout our design process. We share our work, seek feedback and engage with our community to improve quality and build trust.
+          </p>
+          <p>It's how we align with Canonical's core values of open source and community collaboration.</p>
+          <div class="p-cta-block">
+            <a href="/open-design">Learn about open design&nbsp;&rsaquo;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h3 class="p-heading--2">Beautifully precise</h3>
+      </div>
+      <div class="col">
+        <p>We emphasize precision. Attention to detail, clarity and consistency shape every aspect of our design.</p>
+        <p>
+          We embrace our brand guidelines so users have a cohesive and visually appealing experience across all products and platforms.
+        </p>
+        <div class="p-cta-block">
+          <a href="/brand">About our brand&nbsp;&rsaquo;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="u-fixed-width u-sv2">
+      <h2 class="p-text--small-caps">How we work</h2>
+    </div>
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h3 class="p-heading--2">
+            Own the work,
+            <br />
+            rely on the team
+          </h3>
+        </div>
+        <div class="col">
+          <p>
+            Our team is fully remote. Since we work apart, designers are each fully responsible for the end-to-end experience of their product. That doesn’t mean we’re alone.
+          </p>
+          <p>
+            We rely on peer reviews and good communication to keep design a team effort and align our products. We each have a lot of responsibility, and enough support to carry it out.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="u-fixed-width">
+      <div class="p-image-container--cinematic is-cover">
+        {{ image(url="https://assets.ubuntu.com/v1/5982477b-how-we-work.png",
+                alt="",
+                width="3696",
+                height="1541",
+                hi_def=True,
+                attrs={"class": "p-image-container__image"},
+                loading="lazy") | safe
+        }}
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>Harness our diverse skills</h2>
+        </div>
+        <div class="col">
+          <p>Our design practice encompasses user research, UX design, content design, and visual design.</p>
+          <p>
+            Combining disciplines means that our products are intuitive and visually compelling. The result is products that meet high standards of usability and visual excellence.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="p-equal-height-row">
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-image-container">
+            {{ image(url="https://assets.ubuntu.com/v1/7e85a305-user research.png",
+                        alt="",
+                        width="852",
+                        height="569",
+                        hi_def=True,
+                        attrs={"class": "p-image-container__image"},
+                        loading="lazy") | safe
+            }}
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <h3 class="p-heading--5">User research</h3>
+        </div>
+      </div>
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-image-container">
+            {{ image(url="https://assets.ubuntu.com/v1/39942106-ux design.png",
+                        alt="",
+                        width="852",
+                        height="569",
+                        hi_def=True,
+                        attrs={"class": "p-image-container__image"},
+                        loading="lazy") | safe
+            }}
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <h3 class="p-heading--5">UX design</h3>
+        </div>
+      </div>
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-image-container">
+            {{ image(url="https://assets.ubuntu.com/v1/8e11813d-content design.png",
+                        alt="",
+                        width="852",
+                        height="569",
+                        hi_def=True,
+                        attrs={"class": "p-image-container__image"},
+                        loading="lazy") | safe
+            }}
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <h3 class="p-heading--5">Content design</h3>
+        </div>
+      </div>
+      <div class="p-equal-height-row__col">
+        <div class="p-equal-height-row__item">
+          <div class="p-image-container">
+            {{ image(url="https://assets.ubuntu.com/v1/f4013007-visual design.png",
+                        alt="",
+                        width="852",
+                        height="569",
+                        hi_def=True,
+                        attrs={"class": "p-image-container__image"},
+                        loading="lazy") | safe
+            }}
+          </div>
+        </div>
+        <div class="p-equal-height-row__item">
+          <h3 class="p-heading--5">Visual design</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>Collaborate across functions</h2>
+      </div>
+      <div class="col">
+        <p>
+          We work in cross-functional teams of engineers, product managers, data analysts and technical authors. Together we ensure that every facet of our products is well aligned.
+        </p>
+        <p>
+          We bridge the gap between ideas and implementation with diagrams and models to visualize complex technical architecture and abstract concepts. This helps us communicate and solve problems quickly.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <hr class="p-rule" />
+        <div class="col">
+          <h2>Grow together</h2>
+        </div>
+        <div class="col">
+          <p>
+            We are committed to improving our design practice. We have three working groups, with each designer dedicating 20% of their time to one of them. Each working group plays a crucial role in advancing our design practices at Canonical and beyond.
+          </p>
+          <p>The working groups are:</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-start-large-4 col-9">
+        <div class="p-equal-height-row">
+          <div class="p-equal-height-row__col">
+            <div class="p-equal-height-row__item">
+              <div class="p-image-container--3-2-on-small p-image-container--square-on-medium p-image-container--2-3-on-large is-highlighted">
+                {{ image(url="https://assets.ubuntu.com/v1/93dc61ac-wg_design-systems.png",
+                                alt="",
+                                width="852",
+                                height="1279",
+                                hi_def=True,
+                                attrs={"class": "p-image-container__image"},
+                                loading="lazy") | safe
+                }}
+              </div>
+              <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            </div>
+            <h3 class="p-heading--5 p-equal-height-row__item">Design systems</h3>
+            <div class="p-equal-height-row__item">
+              <p>To develop guidelines and libraries that make our projects efficient and consistent.</p>
+            </div>
+            <div class="p-cta-block p-equal-height-row__item">
+              <a href="/design-systems">Learn more about Design Systems&nbsp;&rsaquo;</a>
+            </div>
+          </div>
+          <div class="p-equal-height-row__col">
+            <div class="p-equal-height-row__item">
+              <div class="p-image-container--3-2-on-small p-image-container--square-on-medium p-image-container--2-3-on-large is-highlighted">
+                {{ image(url="https://assets.ubuntu.com/v1/8900cb2e-wg_user-needs.png",
+                                alt="",
+                                width="852",
+                                height="1279",
+                                hi_def=True,
+                                attrs={"class": "p-image-container__image"},
+                                loading="lazy") | safe
+                }}
+              </div>
+              <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            </div>
+            <h3 class="p-heading--5 p-equal-height-row__item">User needs</h3>
+            <div class="p-equal-height-row__item">
+              <p>To focus our design process and product development on understanding and addressing our users.</p>
+            </div>
+            <div class="p-cta-block p-equal-height-row__item">
+              <a href="/design-practice/user-research">Learn more about User needs&nbsp;&rsaquo;</a>
+            </div>
+          </div>
+          <div class="p-equal-height-row__col">
+            <div class="p-equal-height-row__item">
+              <div class="p-image-container--3-2-on-small p-image-container--square-on-medium p-image-container--2-3-on-large is-highlighted">
+                {{ image(url="https://assets.ubuntu.com/v1/24280c8c-wg_open-design.png",
+                                alt="",
+                                width="852",
+                                height="1279",
+                                hi_def=True,
+                                attrs={"class": "p-image-container__image"},
+                                loading="lazy") | safe
+                }}
+              </div>
+              <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            </div>
+            <h3 class="p-heading--5 p-equal-height-row__item">Open design</h3>
+            <div class="p-equal-height-row__item">
+              <p>To promote transparency and collaboration in our design process and contribute to the open design community.</p>
+            </div>
+            <div class="p-cta-block p-equal-height-row__item">
+              <a href="/open-design">Learn more about Open Design&nbsp;&rsaquo;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% with section_classes='p-section--deep', tag_id='1239', limit='3', hide_date=True, link_image=True, show_image=True, show_excerpt=True, excerptLength=200 %}
+    {% include "/shared/_blogsection.html" %}
+  {% endwith %}
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block meta_title %}Blogs{% endblock %}
+
+{% block meta_description %}Design Page blogs{% endblock %}
+
+{% block body_class %}is-paper{% endblock %}
+
+{% block content %}
+
+  <div class="p-strip">
+    <div class="row">
+      <div class="col-9 col-start-large-4 col-medium-4 col-start-medium-3">
+        <div class="p-section">
+          <h1>Blog</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="p-section--deep">
+    <div class="u-fixed-width">
+      {% include "blog/article_list.html" %}
+      {% include "shared/_pagination.html" %}
+    </div>
+  </section>
+
+{% endblock %}

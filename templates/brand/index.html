@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block meta_title %}
+  Brand
+{% endblock meta_title %}
+
+{% block meta_description %}
+  Canonical brand
+{% endblock meta_description %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1nyNLG5IfJHRpGGMJzJIkm3TJSXTvd4vOdMhu2M9Lfxo/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block body_class %}
+  is-paper
+{% endblock body_class %}
+
+{% block content %}
+
+  <section class="p-suru--25-75">
+    <div class="p-section">
+      <div class="row--50-50">
+        <div class="col">
+          <h1>Canonical and Ubuntu</h1>
+          <h2>Our brand values</h2>
+        </div>
+        <div class="col">
+          <p>
+            We believe everyone has the right to a great computing experience &mdash; and we also believe it should be free. Ubuntu is the result of a growing community, working together to provide just that. As such, the Ubuntu brand embodies four values:
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr class="p-rule" />
+      <div class="col-3 col-medium-3">
+        <h3>Freedom</h3>
+        <p>Ubuntu celebrates freedom. Freedom to choose, to change, to participate.</p>
+      </div>
+      <div class="col-3 col-medium-3">
+        <h3>Reliable</h3>
+        <p>You can depend on Ubuntu. Like the people who make it, it is trustworthy and keeps its promises.</p>
+      </div>
+      <div class="col-3 col-medium-3">
+        <h3>Precise</h3>
+        <p>
+          Ubuntu is crisp and clean in engineering and attitude. There is beauty in the precision of the process and product.
+        </p>
+      </div>
+      <div class="col-3 col-medium-3">
+        <h3>Collaborative</h3>
+        <p>Working together is at the heart of Ubuntu. It is the essence of 'humanity towards others'.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section is-light">
+    <div class="row--50-50">
+      <hr class="p-rule" />
+      <div class="col">
+        <h2>Our brand guidelines</h2>
+      </div>
+      <div class="col">
+        <p>
+          Our values should be evident wherever Ubuntu is encountered, whether online or via traditional marketing material. If we follow these guidelines consistently, the brand will grow strong enough to attract people, encouraging them to look even more positively on the product itself.
+        </p>
+        <p>
+          These guidelines provide everything you need to create professional communication materials that will build the Ubuntu brand. To help ensure the continued success of Ubuntu, please use them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section--deep">
+    <div class="row">
+      <hr class="p-rule" />
+      <div class="col-6 col-medium-2">
+        <h2>Brand assets</h2>
+      </div>
+      <div class="col-3 col-medium-2 p-card p-media-container is-light">
+        <div class="u-vertically-center u-align--center">
+          {{ image(url="https://assets.ubuntu.com/v1/272486ef-logos.png",
+                    alt="",
+                    width="717",
+                    height="585",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-card_image"}) | safe
+          }}
+        </div>
+        <div class="p-card__content">
+          <h3>
+            <a href="/brand/resources">Logos</a>
+          </h3>
+          <p>
+            The logo is the most recognizable feature of any brand identity. The Ubuntu logo is striking and clear, and it represents the brand’s core values.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-3 col-medium-2 p-card p-media-container is-light">
+        <a href="/brand/colour-palette">
+          {{ image(url="https://assets.ubuntu.com/v1/9fc3dc26-color palette.png",
+                    alt="",
+                    width="717",
+                    height="585",
+                    hi_def=True,
+                    loading="lazy",
+                    attrs={"class": "p-card_image"}) | safe
+          }}
+        </a>
+        <div class="p-card__content">
+          <h3>
+            <a href="/brand/colour-palette">Color palette</a>
+          </h3>
+          <p class="p-card__content">
+            The vibrant Ubuntu color palette was created and evolved to ensure that designs convey the correct meaning, while aligning to the brand colors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

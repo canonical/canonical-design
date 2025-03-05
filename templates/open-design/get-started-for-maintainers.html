@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+
+{% from "_macros/vf_hero.jinja" import vf_hero %}
+{% from "_macros/vf_tiered-list.jinja" import vf_tiered_list %}
+
+{% block meta_title %}
+  Open your project to design contributions
+{% endblock meta_title %}
+
+{% block meta_description %}
+  This page aims to explain how maintainers can find designers and what to expect from them. This is not a job board but an RSS feed where we reference stuff from other places, including curated quality projects to contribute to.
+{% endblock meta_description %}
+
+{% block meta_copydoc %}
+  https://docs.google.com/document/d/1DD0Z3_ttDAO--dMGvFZyH9eM6PUlP950j5Ne-P8Rn1M/edit?tab=t.0
+{% endblock meta_copydoc %}
+
+{% block body_class %}is-paper{% endblock %}
+
+{% block content %}
+
+  {% call(slot) vf_hero(
+    title_text='Collaborate and innovate',
+    layout='50/50'
+    ) -%}
+    {%- if slot == 'description' -%}
+      <p>
+        Open source software also needs design. Create better, more inclusive open source solutions with the help of the design community.
+      </p>
+    {%- endif -%}
+  {% endcall -%}
+
+  {%- call(slot) vf_tiered_list(is_description_full_width_on_desktop=true, is_list_full_width_on_tablet=true) -%}
+    {%- if slot == 'title' -%}
+      <h2>How design contributions can help your project</h2>
+    {%- endif -%}
+
+    {%- if slot == 'description' -%}
+      <div class="p-section--shallow">
+        <p>
+          Opening your project to design contributions increase your chances to create something great, but also to build a more inclusive and engaged community.
+        </p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Improve usability and accessibility</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <div class="p-section--shallow">
+        <p>Benefit from user-centric design that improves usability and accessibility.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Include more diverse perspectives</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <div class="p-section--shallow">
+        <p>Gain fresh, innovative ideas from designers with different backgrounds and expertise.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Create a recognizable identity</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <div class="p-section--shallow">
+        <p>Consistent, high-quality design helps establish and maintain a strong visual identity.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_4' -%}
+      <h3 class="p-heading--5">Broaden your reach</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_4' -%}
+      <div class="p-section--shallow">
+        <p>Attract a broader range of contributors, boosting project visibility and support.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_5' -%}
+      <h3 class="p-heading--5">Create better documentation</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_5' -%}
+      <div class="p-section--shallow">
+        <p>Create more intuitive and beginner-friendly documentation.</p>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_6' -%}
+      <h3 class="p-heading--5">Stay ahead of the curve</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_6' -%}
+      <div class="p-section--shallow">
+        <p>Stay ahead by continuously integrating design trends and best practices into your project.</p>
+      </div>
+    {%- endif -%}
+  {%- endcall -%}
+
+  <section class="p-section">
+    <div class="u-fixed-width">
+      <hr class="p-rule" />
+      <div class="p-section--shallow">
+        <h2>Contributions from the UI to the CLI</h2>
+      </div>
+      <div class="p-equal-height-row has-divider-3">
+        <div class="p-equal-height-row__col">
+          <div class="p-equal-height-row__item">
+            <div class="p-image-container--2-3-on-large u-hide--small">
+              {{ image (
+              url="https://assets.ubuntu.com/v1/e55d59fa-research-testing.png",
+              alt="",
+              width="852",
+              height="1398",
+              hi_def=True,
+              loading="lazy"
+              ) | safe
+              }}
+            </div>
+          </div>
+          <div class="p-equal-height-row__item">
+            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            <h3 class="p-heading--5">Research and testing</h3>
+          </div>
+          <p class="p-equal-height-row__item">
+            Understanding your audience and how people interact with your project is key to creating meaningful products.
+          </p>
+          <div class="p-equal-height-row__item">
+            <a href="/design-practice/user-research">
+              <p aria-label="Learn more about our research and testing">Learn more&nbsp;&rsaquo;</p>
+            </a>
+          </div>
+        </div>
+        <div class="p-equal-height-row__col">
+          <div class="p-equal-height-row__item">
+            <div class="p-image-container--2-3-on-large u-hide--small">
+              {{ image(url="https://assets.ubuntu.com/v1/ab3113a4-user-flows.png",
+                            alt="",
+                            width="852",
+                            height="1398",
+                            hi_def=True,
+                            loading="lazy") | safe
+              }}
+            </div>
+          </div>
+          <div class="p-equal-height-row__item">
+            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            <h5 class="p-heading--5">User flows</h5>
+          </div>
+          <p class="p-equal-height-row__item">
+            Mapping how users should move from one point to another helps streamline experiences.
+          </p>
+          <div class="p-equal-height-row__item">
+            <a href="/design-practice">
+              <p aria-label="Learn more about our design practice">Learn more&nbsp;&rsaquo;</p>
+            </a>
+          </div>
+        </div>
+        <div class="p-equal-height-row__col">
+          <div class="p-equal-height-row__item">
+            <div class="p-image-container--2-3-on-large u-hide--small">
+              {{ image(url="https://assets.ubuntu.com/v1/1f8e1bb8-visuals.png",
+                            alt="",
+                            width="852",
+                            height="1398",
+                            hi_def=True,
+                            loading="lazy") | safe
+              }}
+            </div>
+          </div>
+          <div class="p-equal-height-row__item">
+            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            <h5 class="p-heading--5">Visuals</h5>
+          </div>
+          <p class="p-equal-height-row__item">Beautiful graphics make the difference between good and great software.</p>
+          <div class="p-equal-height-row__item">
+            <a href="/brand">
+              <p aria-label="Learn more about our brand">Learn more&nbsp;&rsaquo;</p>
+            </a>
+          </div>
+        </div>
+        <div class="p-equal-height-row__col">
+          <div class="p-equal-height-row__item">
+            <div class="p-image-container--2-3-on-large u-hide--small">
+              {{ image(url="https://assets.ubuntu.com/v1/298ccdad-design-systems.png",
+                            alt="",
+                            width="852",
+                            height="1398",
+                            hi_def=True,
+                            loading="lazy") | safe
+              }}
+            </div>
+          </div>
+          <div class="p-equal-height-row__item">
+            <hr class="p-rule--highlight u-hide--medium u-hide--small" />
+            <h5 class="p-heading--5">Design systems</h5>
+          </div>
+          <p class="p-equal-height-row__item">
+            Strong design systems speed up design and development and create coherent end-to-end experiences.
+          </p>
+          <div class="p-equal-height-row__item">
+            <a href="/design-systems">
+              <p aria-label="Learn more about our design systems">Learn more&nbsp;&rsaquo;</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <hr class="p-rule--highlight is-fixed-width" />
+    <div class="p-section--shallow">
+      <div class="u-fixed-width">
+        <h2>What people are saying</h2>
+      </div>
+    </div>
+    <div class="row--25-75">
+      <div class="col">
+        <hr class="p-rule--muted" />
+        <div class="row">
+          <div class="col-6">
+            <p role="blockquote">
+              <i>"Design is crucial, even for FOSS projects with no UI. Many teams making command-line tools think that design is an entire field that isn't relevant to them. This couldn't be more incorrect. These teams still need to know who uses their tools, why and how they are used, and what features are needed. They need to understand how to best share their project with others, and how to build a community around it."</i>
+            </p>
+          </div>
+          <div class="col-3">
+            <p class="u-text--muted">From our survey</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-section">
+    <hr class="p-rule is-fixed-width" />
+    <div class="u-fixed-width">
+      <div class="p-section--shallow">
+        <h2>Championing design in the open source community</h2>
+      </div>
+      <div class="p-logo-section">
+        <div class="p-logo-section__items">
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/b4a1f243-penpot-logo.png",
+                        alt="Penpot",
+                        width="353",
+                        height="312",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"}) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/150f79be-btc-logo.png",
+                        alt="BTC",
+                        width="186",
+                        height="312",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"}) | safe
+            }}
+          </div>
+          <div class="p-logo-section__item">
+            {{ image(url="https://assets.ubuntu.com/v1/81704a08-ubuntu-logo-vw.png",
+                        alt="Canonical Ubuntu",
+                        width="286",
+                        height="312",
+                        hi_def=True,
+                        loading="lazy",
+                        attrs={"class": "p-logo-section__logo"}) | safe
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {%- call(slot) vf_tiered_list(is_list_full_width_on_tablet=false) -%}
+    {%- if slot == 'title' -%}
+      <h2>Share your project with designers</h2>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_1' -%}
+      <h3 class="p-heading--5">Add design requests to your projects</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_1' -%}
+      <div class="p-section--shallow">
+        <p>
+          Highlight design-oriented requests on your GitHub projects using dedicated tags and design-oriented brief templates.
+        </p>
+      </div>
+      <div class="p-cta-block">
+        <a href="https://docs.google.com/document/d/11kQqpy4WqvqYDe9VS547uoTI4CfXriaBhTQMhYR5uo0/edit">Write designer-friendly briefs&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_2' -%}
+      <h3 class="p-heading--5">Post your project on Open Design</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_2' -%}
+      <div class="p-section--shallow">
+        <p>Amplify your project's reach by sharing it on the Open Design board.</p>
+      </div>
+      <div class="p-cta-block">
+        <a href="https://contribute.design/">Post your project&nbsp;&rsaquo;</a>
+      </div>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_title_3' -%}
+      <h3 class="p-heading--5">Get in touch with us</h3>
+    {%- endif -%}
+
+    {%- if slot == 'list_item_description_3' -%}
+      <div class="p-section--shallow">
+        <p>Do you have an open source project that needs design contributions?</p>
+      </div>
+      <div class="p-cta-block">
+        <a href="/sauce">Let us know</a>
+      </div>
+    {%- endif -%}
+  {%- endcall -%}
+
+  <section class="p-section--deep">
+    <hr class="p-rule is-fixed-width" />
+    <div class="p-section--shallow">
+      <div class="row--50-50">
+        <div class="col">
+          <h2>
+            Attract the best designers
+            <br class="u-hide--small" />
+            for your project
+          </h2>
+        </div>
+        <div class="col">
+          <p>
+            One of the biggest hurdles faced by designers interested in contributing is the lack of clear guidelines on how to contribute and what is expected of them. Here are some things you can do to help designers start contributing to your project.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row--25-75">
+      <div class="col">
+        <hr class="p-rule--muted" />
+        <div class="row">
+          <div class="col-3">
+            <h3 class="p-heading--5">Be open and clear</h3>
+          </div>
+          <div class="col-6">
+            <ul class="p-list--divided">
+              <li class="p-list__item is-ticked">
+                Create a brief for your project and your request. Explain what you would like to receive, why and how and outline the skills required.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="p-rule--muted" />
+        <div class="row">
+          <div class="col-3">
+            <h3 class="p-heading--5">Set up expectations</h3>
+          </div>
+          <div class="col-6">
+            <ul class="p-list--divided">
+              <li class="p-list__item is-ticked">Make sure the acceptance criteria are clear</li>
+              <li class="p-list__item is-ticked">Explicitly state if the job is paid or free</li>
+              <li class="p-list__item is-ticked">Explain what license you are using in easy-to-understand terms</li>
+              <li class="p-list__item is-ticked">Be transparent about your design review process</li>
+            </ul>
+          </div>
+        </div>
+        <hr class="p-rule--muted" />
+        <div class="row">
+          <div class="col-3">
+            <h3 class="p-heading--5">Be responsive</h3>
+          </div>
+          <div class="col-6">
+            <ul class="p-list--divided">
+              <li class="p-list__item is-ticked">Try to stay in touch and provide feedback quickly</li>
+              <li class="p-list__item is-ticked">
+                Make sure to be constructive and refer to the acceptance criteria for approval/rejection of a contribution
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
