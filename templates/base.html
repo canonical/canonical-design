@@ -122,10 +122,12 @@
         {% include '_layouts/_navigation.html' %}
 
         <div class="wrapper">
-          <div id="main-content">
+          <div id="main-content" class="{{ 'l-sidenav-layout' if sidenav_section }}">
+            {% include '_layouts/_sidenav.html' %}
+            <div class="{{ 'l-sidenav-layout__content' if sidenav_section }}">
+              {% block content %}{% endblock %}
 
-            {% block content %}{% endblock %}
-
+            </div>
           </div>
         </div>
 
