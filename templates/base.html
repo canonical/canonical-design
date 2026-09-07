@@ -101,7 +101,6 @@
         <meta name="author" content="Canonical" />
 
         <link rel="stylesheet"
-              type="text/css"
               media="screen"
               href="{{ url_for('static', filename='css/styles.css') }}" />
 
@@ -110,7 +109,8 @@
         {% block body_class %}{% endblock %} l-site">
 
         <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P2LV34ZH"
+        <noscript><iframe title="Google Tag Manager"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-P2LV34ZH"
         height="0"
         width="0"
         style="display:none;

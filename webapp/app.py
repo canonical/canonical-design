@@ -1,15 +1,14 @@
-import requests
 import os
-import flask
-import yaml
-
-from flask import render_template, request
 from urllib.parse import parse_qs, urlencode
 
-from canonicalwebteam.flask_base.app import FlaskBase
-from canonicalwebteam.blog import build_blueprint, BlogViews, BlogAPI
-from canonicalwebteam.templatefinder import TemplateFinder
+import flask
+import requests
+import yaml
 from canonicalwebteam import image_template
+from canonicalwebteam.blog import BlogAPI, BlogViews, build_blueprint
+from canonicalwebteam.flask_base.app import FlaskBase
+from canonicalwebteam.templatefinder import TemplateFinder
+from flask import render_template, request
 
 app = FlaskBase(
     __name__,
